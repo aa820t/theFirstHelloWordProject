@@ -1,0 +1,49 @@
+<!-- pc_banner-->
+<php>
+    $home_slides=sp_getslide("indexSlide");
+    $home_slides=empty($home_slides)?$default_home_slides:$home_slides;
+</php>
+<div class="am-container am-hide-sm-only am-padding-horizontal-0">
+    <div data-am-widget="slider" class="am-slider am-slider-d2 am-no-layout" data-am-slider="{&quot;directionNav&quot;:false}">
+        <div class="am-viewport" style="overflow: hidden; position: relative;">
+            <ul class="am-slides" style="width: 1000%; transition-duration: 0s; transform: translate3d(-3000px, 0px, 0px);">
+                <foreach name="home_slides" item="vo">
+                    <li class="clone" aria-hidden="true" style="width: 1000px; float: left; display: block;">
+                        <a href="{$vo.slide_url}"><img src="{:sp_get_asset_upload_path($vo['slide_pic'])}" alt="" class="am-img-responsive" draggable="false"></a>
+                    </li>
+                </foreach>
+            </ul>
+        </div>
+        <ol class="am-control-nav am-control-paging">
+            <foreach name="home_slides" item="vo">
+                <li><a class="">{$key}</a><i></i></li>
+            </foreach>
+        </ol>
+    </div>
+</div>
+<!-- pc_banner-->
+
+<!-- mobile_banner-->
+<php>
+    $mobile_home_slides=sp_getslide("indexSlide");
+    $mobile_home_slides=empty($mobile_home_slides)?$default_home_slides:$mobile_home_slides;
+</php>
+<div class="am-g am-show-sm-only">
+    <div data-am-widget="slider" class="am-slider am-slider-d2 am-no-layout" data-am-slider="{&quot;directionNav&quot;:false}">
+        <div class="am-viewport" style="overflow: hidden; position: relative;">
+            <ul class="am-slides" style="width: 800%; transition-duration: 0.6s; transform: translate3d(-960px, 0px, 0px);">
+                <foreach name="mobile_home_slides" item="vm">
+                    <li class="clone" aria-hidden="true" style="width: 320px; float: left; display: block;">
+                        <a href="{$vm.slide_url}"><img src="{:sp_get_asset_upload_path($vm['slide_pic'])}" alt="" class="am-img-responsive" draggable="false"></a>
+                    </li>
+                </foreach>
+            </ul>
+        </div>
+        <ol class="am-control-nav am-control-paging">
+            <foreach name="mobile_home_slides" item="vm">
+                <li><a class="">{$key}</a><i></i></li>
+            </foreach>
+        </ol>
+    </div>
+</div>
+<!-- mobile_banner-->
