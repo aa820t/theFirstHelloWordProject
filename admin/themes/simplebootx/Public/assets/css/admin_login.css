@@ -27,13 +27,17 @@ body {
 }
 
 h1 a {
+	/*display: block;*/
+	/*height: 50px;*/
+	/*width: 250px;*/
+	/*margin:auto;*/
+	/*overflow: hidden;*/
+	/*text-indent: -2000em;*/
+	/*background: url(../images/logo.png) no-repeat center center;*/
+	text-align: center;
 	display: block;
-	height: 50px;
-	width: 250px;
-	margin:auto;
-	overflow: hidden;
-	text-indent: -2000em;
-	background: url(../images/logo.png) no-repeat center center;
+	color: #fff;
+	text-decoration: none;
 }
 
 .login ul,
