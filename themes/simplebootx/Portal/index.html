@@ -181,39 +181,23 @@
         </nav>
     </div>
     <ul class="am-avg-lg-3 am-avg-md-3 am-avg-sm-2 am-padding-top-xs">
-        <li>
-            <div class="am-u-lg-12 am-u-lg-centered am-u-md-12 am-u-md-centered am-u-sm-10 am-u-sm-centered">
-                <a href=""><img src="__TMPL__Public/images/1-140626163U3c4.jpg" class="am-img-responsive" alt="电子教室系统"></a>
-            </div>
-            <p class="am-text-center am-margin-vertical-xs am-text-xl am-show-md-up"><a href="">电子教室系统</a></p>
-            <p class="am-text-center am-margin-vertical-xs am-text-sm am-show-sm-only"><a href="">电子教室系统</a></p>
-        </li>
-        <li>
-            <div class="am-u-lg-12 am-u-lg-centered am-u-md-12 am-u-md-centered am-u-sm-10 am-u-sm-centered"><a href=""><img src="__TMPL__Public/images/1-1406261604032c.jpg" class="am-img-responsive" alt="数字语音系统"></a></div>
-            <p class="am-text-center am-margin-vertical-xs am-text-xl am-show-md-up"><a href="">数字语音系统</a></p>
-            <p class="am-text-center am-margin-vertical-xs am-text-sm am-show-sm-only"><a href="">数字语音系统</a></p>
-        </li>
-        <li>
-            <div class="am-u-lg-12 am-u-lg-centered am-u-md-12 am-u-md-centered am-u-sm-10 am-u-sm-centered"><a href=""><img src="__TMPL__Public/images/1-140625164TV43.jpg" class="am-img-responsive" alt="电子书包课堂管理系统"></a></div>
-            <p class="am-text-center am-margin-vertical-xs am-text-xl am-show-md-up"><a href="">电子书包课堂管理系统</a></p>
-            <p class="am-text-center am-margin-vertical-xs am-text-sm am-show-sm-only"><a href="">电子书包课堂管理系统</a></p>
-        </li>
-        <li>
-            <div class="am-u-lg-12 am-u-lg-centered am-u-md-12 am-u-md-centered am-u-sm-10 am-u-sm-centered"><a href="11.html"><img src="__TMPL__Public/images/1-1406261A40Y14.jpg" class="am-img-responsive" alt="还原管理系统"></a></div>
-            <p class="am-text-center am-margin-vertical-xs am-text-xl am-show-md-up"><a href="11.html">还原管理系统</a></p>
-            <p class="am-text-center am-margin-vertical-xs am-text-sm am-show-sm-only"><a href="11.html">还原管理系统</a></p>
-        </li>
-        <li>
-            <div class="am-u-lg-12 am-u-lg-centered am-u-md-12 am-u-md-centered am-u-sm-10 am-u-sm-centered"><a href="37.html"><img src="__TMPL__Public/images/1-1406261AR41A.jpg" class="am-img-responsive" alt="全自动跟踪录播方案"></a></div>
-            <p class="am-text-center am-margin-vertical-xs am-text-xl am-show-md-up"><a href="37.html">全自动跟踪录播方案</a></p>
-            <p class="am-text-center am-margin-vertical-xs am-text-sm am-show-sm-only"><a href="37.html">全自动跟踪录播方案</a></p>
-        </li>
-        <li>
-            <div class="am-u-lg-12 am-u-lg-centered am-u-md-12 am-u-md-centered am-u-sm-10 am-u-sm-centered"><a href="38.html"><img src="__TMPL__Public/images/1-140626161303T4.jpg" class="am-img-responsive" alt="移动录播系统"></a></div>
-            <p class="am-text-center am-margin-vertical-xs am-text-xl am-show-md-up"><a href="38.html">移动录播系统</a></p>
-            <p class="am-text-center am-margin-vertical-xs am-text-sm am-show-sm-only"><a href="38.html">移动录播系统</a></p>
-        </li>
+        <?php
+            $posts=sp_sql_posts_bycatid('11','field:tid,post_title,smeta;order:listorder desc;limit:8');
+        ?>
+        <volist name="posts" id="v">
+            <php>
+                $photo = json_decode($v['smeta'],true);
+                $photo = $photo['photo'][0];
+            </php>
 
+            <li>
+                <div class="am-u-lg-12 am-u-lg-centered am-u-md-12 am-u-md-centered am-u-sm-10 am-u-sm-centered">
+                    <a href="{$v.tid}"><img src="{:sp_get_asset_upload_path($photo['url'])}" alt="{$photo['alt']}" class="am-img-responsive"></a>
+                </div>
+                <p class="am-text-center am-margin-vertical-xs am-text-xl am-show-md-up"><a href="{$v.tid}">{$v.post_title}</a></p>
+                <p class="am-text-center am-margin-vertical-xs am-text-sm am-show-sm-only"><a href="{$v.tid}">{$v.post_title}</a></p>
+            </li>
+        </volist>
     </ul>
 </div>
 <!-- 行 (施工播报)-->
