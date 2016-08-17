@@ -17,62 +17,28 @@
     <!--banner-->
     <tc_include file="Public:otherPageBanner"/>
     <!--left-->
+    <?php
+        if($parent == 0){
+            $left_nav_parent_prams = sp_get_term($term_id);
+            $left_nav_child_prams = sp_get_child_terms($term_id);
+        } else {
+            $left_nav_parent_prams = sp_get_term($parent);
+            $left_nav_child_prams = sp_get_child_terms($parent);
+        }
+    ?>
     <div class="am-u-lg-3 am-padding-horizontal-xs am-hide-sm-only">
         <section data-am-widget="accordion" class="am-accordion am-accordion-default am-margin-0 am-no-layout" data-am-accordion="{ &quot;multiple&quot;: true }">
-            <dl class="am-accordion-item">
-                <dt class="am-accordion-title am-text-default"><a href="6.html">关于秝智</a></dt>
-            </dl>
             <dl class="am-accordion-item am-active">
-                <dt class="am-accordion-title am-text-default" style="color:#333;">产品中心</dt>
-                <dd class="am-accordion-bd am-collapse ">
-                    <div class="am-accordion-content">
+                <dt class="am-accordion-title am-text-default" style="color:#333;">{$left_nav_parent_prams.name}</dt>
+                <dd class="am-accordion-bd am-collapse am-in">
+                    <div class="am-accordion-content_diy <empty name="left_nav_child_prams">am-hide</empty>">
                         <dl class="am-margin-bottom-0">
-                            <dd class="am-padding-vertical-xs"><a href="chanping/4.html" class="am-text-sm">电子教室系统</a></dd>
-                            <dd class="am-padding-vertical-xs"><a href="chanping/39.html" class="am-text-sm">数字语音系统</a></dd>
-                            <dd class="am-padding-vertical-xs"><a href="chanping/40.html" class="am-text-sm">电子书包课堂管理系统</a></dd>
-                            <dd class="am-padding-vertical-xs"><a href="chanping/11.html" class="am-text-sm">还原管理系统</a></dd>
-                            <dd class="am-padding-vertical-xs"><a href="chanping/37.html" class="am-text-sm">全自动跟踪录播方案</a></dd>
-                            <dd class="am-padding-vertical-xs"><a href="chanping/38.html" class="am-text-sm">移动录播系统</a></dd>
-
+                            <volist name="left_nav_child_prams" id="v">
+                                <dd class="am-padding-vertical-xs_diy"><a href="{:leuu('portal/list/index',array('id'=>$v['term_id']))}" class="am-text-sm">{$v.name}</a></dd>
+                            </volist>
                         </dl>
                     </div>
                 </dd>
-            </dl>
-            <dl class="am-accordion-item">
-                <dt class="am-accordion-title am-text-default" style="color:#333;">解决方案</dt>
-                <dd class="am-accordion-bd am-collapse ">
-                    <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
-                    <div class="am-accordion-content">
-                        <dl class="am-margin-bottom-0">
-                            <dd class="am-padding-vertical-xs"><a href="10.html" class="am-text-sm">数字语音教室方案</a></dd>
-                            <dd class="am-padding-vertical-xs"><a href="9.html" class="am-text-sm">便携移动录播方案</a></dd>
-                            <dd class="am-padding-vertical-xs"><a href="33.html" class="am-text-sm">全自动跟踪录播方案</a></dd>
-                            <dd class="am-padding-vertical-xs"><a href="29.html" class="am-text-sm">电子书包方案</a></dd>
-
-                        </dl>
-                    </div>
-                </dd>
-            </dl>
-            <dl class="am-accordion-item">
-                <dt class="am-accordion-title am-text-default" style="color:#333;">产品购买</dt>
-                <dd class="am-accordion-bd am-collapse ">
-                    <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->
-                    <div class="am-accordion-content">
-                        <dl class="am-margin-bottom-0">
-                            <dd class="am-padding-vertical-xs"><a href="soft/free/" class="am-text-sm">产品试用</a></dd>
-                            <dd class="am-padding-vertical-xs"><a href="soft/buy/17.html" class="am-text-sm">产品购买</a></dd>
-                        </dl>
-                    </div>
-                </dd>
-            </dl>
-            <dl class="am-accordion-item">
-                <dt class="am-accordion-title am-text-default"><a href="service/8.html">技术支持</a></dt>
-            </dl>
-            <dl class="am-accordion-item">
-                <dt class="am-accordion-title am-text-default"><a href="service/7.html">联系我们</a></dt>
-            </dl>
-            <dl class="am-accordion-item">
-                <dt class="am-accordion-title am-text-default"><a href="service/34.html">常见问题</a></dt>
             </dl>
         </section>
     </div>
@@ -80,54 +46,28 @@
     <div class="am-u-lg-9 am-padding-horizontal-xs">
         <div class="am-container am-padding-horizontal-0 br_bt br_tp br_lf br_rg">
             <ol class="am-breadcrumb am-margin-vertical-0 br_bt">
-                <li><a href="" class="am-icon-home">首页</a></li>
-                <li><a href="chanping/4.html">列表中心</a></li>
+                <li><a href="/" class="am-icon-home">首页</a></li>
+                <li>{$name}</li>
+                <li>列表中心</li>
             </ol>
             <div class="am-container am-padding-horizontal-xs">
                 <div class="am-list-news-bd">
+                    <php>
+                        if($parent ==0){
+                            $posts_lists = sp_sql_posts_paged_bycatid($cat_id,"field:tid,post_title,post_date;order:post_date DESC;",10);
+                        } else {
+                            $posts_lists = sp_sql_posts_paged("cid:$cat_id;field:tid,post_title,post_date;order:post_date DESC;",10);
+                        }
+                    </php>
                     <ul class="am-list">
-                        <li class="am-g am-list-item-dated">
-                            <a href="##" class="am-list-item-hd ">我很囧，你保重....晒晒旅行中的那些囧！</a>
-                            <span class="am-list-date">2013-09-18</span>
-                        </li>
-                        <li class="am-g am-list-item-dated">
-                            <a href="##" class="am-list-item-hd ">我最喜欢的一张画</a>
-                            <span class="am-list-date">2013-10-14</span>
-                        </li>
-                        <li class="am-g am-list-item-dated">
-                            <a href="##" class="am-list-item-hd ">“你的旅行，是什么颜色？” 晒照片，换北欧梦幻极光之旅！</a>
-                            <span class="am-list-date">2013-11-18</span>
-                        </li>
+                        <volist name="posts_lists['posts']" id="vo">
+                            <li class="am-g am-list-item-dated">
+                                <a href="{:leuu('article/index',array('id'=>$vo['tid'],'cid'=>$vo['term_id']))}" class="am-list-item-hd ">{$vo.post_title}</a>
+                                <span class="am-list-date">{$vo.post_date|substr=0,10}</span>
+                            </li>
+                        </volist>
                     </ul>
-                    <ul data-am-widget="pagination" class="am-pagination am-pagination-default">
-                        <li class="am-pagination-first ">
-                            <a href="#" class="">第一页</a>
-                        </li>
-                        <li class="am-pagination-prev ">
-                            <a href="#" class="">上一页</a>
-                        </li>
-                        <li class="">
-                            <a href="#" class="">1</a>
-                        </li>
-                        <li class="am-active">
-                            <a href="#" class="am-active">2</a>
-                        </li>
-                        <li class="">
-                            <a href="#" class="">3</a>
-                        </li>
-                        <li class="">
-                            <a href="#" class="">4</a>
-                        </li>
-                        <li class="">
-                            <a href="#" class="">5</a>
-                        </li>
-                        <li class="am-pagination-next ">
-                            <a href="#" class="">下一页</a>
-                        </li>
-                        <li class="am-pagination-last ">
-                            <a href="#" class="">最末页</a>
-                        </li>
-                    </ul>
+                    <div class="pagination"><ul>{$posts_lists['page']}</ul></div>
                 </div>
             </div>
         </div>
