@@ -211,7 +211,7 @@
     padding: 2px 4px 2px;
 }
 
-.am-accordion-content_diy{
+.am-accordion-content_diy {
     margin-top: 0;
     padding: 0.8rem 0 1.2rem;
     font-size: 1.4rem;
@@ -221,11 +221,12 @@
 
 }
 
-.am-padding-vertical-xs_diy:hover{
+.am-padding-vertical-xs_diy:hover,
+.am-list-item-dated:hover{
     background-color: #f5f5f5;
 }
 
-.am-padding-vertical-xs_diy a{
+.am-padding-vertical-xs_diy a {
     padding: 0.5rem 1rem;
     display: block;
     width: 100%;
@@ -245,17 +246,17 @@
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
-    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
-.pagination ul>li {
+.pagination ul > li {
     display: inline;
     line-height: 20px;
 }
 
-.pagination ul>li:first-child>a, .pagination ul>li:first-child>span {
+.pagination ul > li:first-child > a, .pagination ul > li:first-child > span {
     border-left-width: 1px;
     -webkit-border-bottom-left-radius: 0;
     border-bottom-left-radius: 0;
@@ -264,21 +265,26 @@
     -moz-border-radius-bottomleft: 0;
     -moz-border-radius-topleft: 0;
 }
-.pagination ul>.active>a, .pagination ul>.active>span {
+
+.pagination ul > .active > a, .pagination ul > .active > span {
     color: #fff;
 }
-.pagination ul>.active>a, .pagination ul>.active>span {
+
+.pagination ul > .active > a, .pagination ul > .active > span {
     color: #dfdfdf;
     cursor: default;
 }
-.pagination ul>li>a:hover, .pagination ul>li>a:focus, .pagination ul>.active>a, .pagination ul>.active>span {
+
+.pagination ul > li > a:hover, .pagination ul > li > a:focus, .pagination ul > .active > a, .pagination ul > .active > span {
     background-color: #428bca;
 }
-.pagination ul>li>a, .pagination ul>li>span {
+
+.pagination ul > li > a, .pagination ul > li > span {
     margin-right: 6px;
     color: #222;
 }
-.pagination ul>li>a, .pagination ul>li>span {
+
+.pagination ul > li > a, .pagination ul > li > span {
     float: left;
     padding: 4px 12px;
     line-height: 20px;
@@ -286,5 +292,25 @@
     background-color: #dfdfdf;
     border: 1px solid transparent;
     border-left-width: 0;
+}
+
+.am-titlebar {
+    background-color: #fcfcfc;
+}
+
+.article-infobox {
+    display: table;
+    margin: 0 auto;
+}
+
+.am-article-bd {
+    padding-bottom: 2rem;
+}
+
+.prevArticleLink{
+    margin-bottom: 5px;
+}
+.nextArticleLink{
+    margin-bottom: 15px;
 }
 

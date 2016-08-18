@@ -13,23 +13,70 @@
 	<!--banner-->
 	<tc_include file="Public:otherPageBanner" />
 	<!--left-->
-	<tc_include file="Public:left"/>
+	<?php
+        if($term['parent'] == 0){
+            $left_nav_parent_prams = sp_get_term($term['term_id']);
+            $left_nav_child_prams = sp_get_child_terms($term['term_id']);
+        } else {
+            $left_nav_parent_prams = sp_get_term($term['parent']);
+            $left_nav_child_prams = sp_get_child_terms($term['parent']);
+        }
+    ?>
+	<div class="am-u-lg-3 am-padding-horizontal-xs am-hide-sm-only">
+		<section data-am-widget="accordion" class="am-accordion am-accordion-default am-margin-0 am-no-layout" data-am-accordion="{ &quot;multiple&quot;: true }">
+			<dl class="am-accordion-item am-active">
+				<dt class="am-accordion-title am-text-default" style="color:#333;">{$left_nav_parent_prams.name}</dt>
+				<dd class="am-accordion-bd am-collapse am-in">
+					<div class="am-accordion-content_diy <empty name='left_nav_child_prams'>am-hide</empty>">
+						<dl class="am-margin-bottom-0">
+							<volist name="left_nav_child_prams" id="v">
+								<dd class="am-padding-vertical-xs_diy"><a href="{:leuu('portal/list/index',array('id'=>$v['term_id']))}" class="am-text-sm">{$v.name}</a></dd>
+							</volist>
+						</dl>
+					</div>
+				</dd>
+			</dl>
+		</section>
+	</div>
 	<!--right-->
 	<div class="am-u-lg-9 am-padding-horizontal-xs">
 		<div class="am-container am-padding-horizontal-0 br_bt br_tp br_lf br_rg">
 			<ol class="am-breadcrumb am-margin-vertical-0 br_bt">
-				<li><a href="" class="am-icon-home">首页</a></li>
-				<li><a href="chanping/4.html">产品中心</a></li>
+				<li><a href="/" class="am-icon-home">首页</a></li>
+				<li>{$term['name']}</li>
+				<li>文章中心</li>
 			</ol>
 			<div class="am-container am-padding-horizontal-xs">
 				<article class="am-article">
 					<div class="am-article-hd am-text-center">
-						<h1 class="am-article-title am-margin-vertical">电子教室系统</h1>
+						<h1 class="am-article-title am-margin-vertical">{$post_title}</h1>
 					</div>
+					<div class="article-infobox">
+						<span>发布于:{$post_date|substr=2,14} by {$user_nicename|default=$user_login}</span>
+						&nbsp;&nbsp;&nbsp;
+		    			<span>点击数:{$post_hits}</span>
+					</div>
+					<hr>
 					<div class="am-article-bd">
-						<!--内容-->
+						{$post_content}
 					</div>
+					<if condition="!empty($post_source)">
+						<div>
+							<b>注：本文转载自{$post_source}，转载目的在于传递更多信息，并不代表本网赞同其观点和对其真实性负责。如有侵权行为，请联系我们，我们会及时删除。</b>
+						</div>
+					</if>
 				</article>
+				<hr>
+				<div class="prevArticleLink">
+					<if condition="!empty($prev)">
+						<a href="{:leuu('article/index',array('id'=>$prev['tid'],'cid'=>$prev['term_id']))}" class="btn btn-primary pull-left">上一篇:&nbsp;{$prev['post_title']}</a>
+					</if>
+				</div>
+				<div class="nextArticleLink">
+					<if condition="!empty($next)">
+						<a href="{:leuu('article/index',array('id'=>$next['tid'],'cid'=>$next['term_id']))}" class="btn btn-warning pull-right">下一篇:&nbsp;{$next['post_title']}</a>
+					</if>
+				</div>
 			</div>
 		</div>
 	</div>

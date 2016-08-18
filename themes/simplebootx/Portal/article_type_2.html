@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+	<html class="js cssanimations">
+	<head>
+		<title>{$post_title} {$site_name} </title>
+		<meta name="keywords" content="{$post_keywords}" />
+		<meta name="description" content="{$post_excerpt}">
+		<tc_include file="Public:head" />
+	</head>
+<body>
+<tc_include file="Public:nav" />
+
+<div class="am-container am-padding-horizontal-0 am-margin-vertical">
+	<!--banner-->
+	<tc_include file="Public:otherPageBanner" />
+
+	<div class="am-u-lg-12 am-padding-horizontal-xs">
+		<div class="am-container am-padding-horizontal-0 br_bt br_tp br_lf br_rg">
+			<ol class="am-breadcrumb am-margin-vertical-0 br_bt">
+				<li><a href="/" class="am-icon-home">首页</a></li>
+				<li>{$post_title}</li>
+			</ol>
+			<div class="am-container am-padding-horizontal-xs">
+				<article class="am-article">
+					<div class="am-article-hd am-text-center">
+						<h1 class="am-article-title am-margin-vertical">{$post_title}</h1>
+					</div>
+					<hr>
+					<div class="am-article-bd">
+						{$post_content}
+					</div>
+				</article>
+			</div>
+		</div>
+	</div>
+	<!--right end-->
+</div>
+              
+<tc_include file="Public:footer"/>
+
+<tc_include file="Public:scripts"/>
+</body>
+</html>

@@ -31,7 +31,7 @@
             <dl class="am-accordion-item am-active">
                 <dt class="am-accordion-title am-text-default" style="color:#333;">{$left_nav_parent_prams.name}</dt>
                 <dd class="am-accordion-bd am-collapse am-in">
-                    <div class="am-accordion-content_diy <empty name="left_nav_child_prams">am-hide</empty>">
+                    <div class="am-accordion-content_diy <empty name='left_nav_child_prams'>am-hide</empty>">
                         <dl class="am-margin-bottom-0">
                             <volist name="left_nav_child_prams" id="v">
                                 <dd class="am-padding-vertical-xs_diy"><a href="{:leuu('portal/list/index',array('id'=>$v['term_id']))}" class="am-text-sm">{$v.name}</a></dd>
