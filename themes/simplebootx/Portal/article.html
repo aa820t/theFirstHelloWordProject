@@ -69,12 +69,12 @@
 				<hr>
 				<div class="prevArticleLink">
 					<if condition="!empty($prev)">
-						<a href="{:leuu('article/index',array('id'=>$prev['tid'],'cid'=>$prev['term_id']))}" class="btn btn-primary pull-left">上一篇:&nbsp;{$prev['post_title']}</a>
+						上一篇:&nbsp;<a href="{:leuu('article/index',array('id'=>$prev['tid'],'cid'=>$prev['term_id']))}" class="btn btn-primary pull-left">{$prev['post_title']}</a>
 					</if>
 				</div>
 				<div class="nextArticleLink">
 					<if condition="!empty($next)">
-						<a href="{:leuu('article/index',array('id'=>$next['tid'],'cid'=>$next['term_id']))}" class="btn btn-warning pull-right">下一篇:&nbsp;{$next['post_title']}</a>
+						下一篇:&nbsp;<a href="{:leuu('article/index',array('id'=>$next['tid'],'cid'=>$next['term_id']))}" class="btn btn-warning pull-right">{$next['post_title']}</a>
 					</if>
 				</div>
 			</div>

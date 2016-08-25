@@ -438,7 +438,8 @@ a {
 }
 a:hover,
 a:focus {
-  color: #095f8a;
+  color: #0066ff;
+  text-decoration: underline;
 }
 a:focus {
   outline: thin dotted;
@@ -3373,7 +3374,7 @@ fieldset[disabled] .am-checkbox-inline {
   margin-right: 5px;
 }
 .am-breadcrumb > li + li:before {
-  content: "»\00a0";
+  content: ">";
   padding: 0 8px;
   color: #cccccc;
 }

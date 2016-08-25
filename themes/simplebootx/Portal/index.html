@@ -9,25 +9,25 @@
 <body>
 {:hook('body_start')}
 <!-- header -->
-<div class="am-container am-padding-horizontal-0 am-show-lg-only">
-    <div class="am-u-lg-2 am-fl am-padding-0">
-        <dt class="am-text-xs" style="padding-top:8px;"><a class="font_black no_bold">免费咨询热线：***-****-****</a></dt>
-    </div>
-    <div class="am-u-lg-5 am-fr am-padding-0">
-        <dl class="am-cf am-margin-0" style="padding-bottom:4px;">
-            <dt class="am-fr am-margin-right-xs am-padding-bottom-xs"><a href="" target="_blank" class="am-btn am-padding-vertical-0 am-padding-horizontal-0"><img src="__TMPL__Public/images/weibo.png"></a></dt>
-            <dt class="am-fr am-margin-right-sm">
-            <div class="am-dropdown" data-am-dropdown="">
-                <button class="am-btn am-padding-vertical-0 am-padding-horizontal-0 am-dropdown-toggle" style="background:none;"><img src="__TMPL__Public/images/weixin.png"></button>
-                <div class="am-dropdown-content">
-                    <img src="__TMPL__Public/images/wx.jpg">
-                </div>
-            </div>
-            </dt>
-            <dt class="am-fr am-text-xs am-margin-right-xs" style="margin-top:8px;"><a class="font_black no_bold">点击微信按钮，关注微信公众号，更多优惠活动等着你&nbsp;<span class="am-icon-caret-right am-icon-sm"></span></a></dt>
-        </dl>
-    </div>
-</div>
+<!--<div class="am-container am-padding-horizontal-0 am-show-lg-only">-->
+    <!--<div class="am-u-lg-2 am-fl am-padding-0">-->
+        <!--<dt class="am-text-xs" style="padding-top:8px;"><a class="font_black no_bold">免费咨询热线：***-****-****</a></dt>-->
+    <!--</div>-->
+    <!--<div class="am-u-lg-5 am-fr am-padding-0">-->
+        <!--<dl class="am-cf am-margin-0" style="padding-bottom:4px;">-->
+            <!--<dt class="am-fr am-margin-right-xs am-padding-bottom-xs"><a href="" target="_blank" class="am-btn am-padding-vertical-0 am-padding-horizontal-0"><img src="__TMPL__Public/images/weibo.png"></a></dt>-->
+            <!--<dt class="am-fr am-margin-right-sm">-->
+            <!--<div class="am-dropdown" data-am-dropdown="">-->
+                <!--<button class="am-btn am-padding-vertical-0 am-padding-horizontal-0 am-dropdown-toggle" style="background:none;"><img src="__TMPL__Public/images/weixin.png"></button>-->
+                <!--<div class="am-dropdown-content">-->
+                    <!--<img src="__TMPL__Public/images/wx.jpg">-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--</dt>-->
+            <!--<dt class="am-fr am-text-xs am-margin-right-xs" style="margin-top:8px;"><a class="font_black no_bold">点击微信按钮，关注微信公众号，更多优惠活动等着你&nbsp;<span class="am-icon-caret-right am-icon-sm"></span></a></dt>-->
+        <!--</dl>-->
+    <!--</div>-->
+<!--</div>-->
 <!--nav-->
 <tc_include file="Public:nav"/>
 
@@ -208,13 +208,13 @@
             <a href="chanping" class="">more »</a>
         </nav>
     </div>
-    <ul class="am-list am-g " style="margin:0 10px 0 0">
+    <ul class="am-list" style="margin:0 10px 0 0">
         <?php
             $posts=sp_sql_posts('cid:4;field:tid,post_title,post_date;order:listorder desc;limit:4');
         ?>
         <volist name="posts" id="v">
-            <li class="am-u-lg-6 am-u-md-12 am-u-sm-12 am-u-end" style="border:0">
-                <a href="{$v.tid}" title="{$v.post_title}" class="am-list-item-hd ">{$v.post_title}</a>
+            <li class="am-u-lg-6 am-u-md-12 am-u-sm-12 am-u-end am-list-item-dated" style="border:0">
+                <a href="{$v.tid}" title="{$v.post_title}" class="am-list-item-hd">{$v.post_title}</a>
                 <span class="am-list-date">{$v.post_date|substr=2,8}</span>
             </li>
         </volist>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html class="js cssanimations">
+<head>
+    <title>{$name} {$seo_title} {$site_name}</title>
+    <meta name="keywords" content="{$seo_keywords}"/>
+    <meta name="description" content="{$seo_description}">
+    <tc_include file="Public:head"/>
+</head>
+<body>
+<!--nav-->
+<tc_include file="Public:nav"/>
+
+
+
+
+<div class="am-container am-padding-horizontal-0 am-margin-vertical">
+    <!--banner-->
+    <tc_include file="Public:otherPageBanner"/>
+    <!--left-->
+    <?php
+        if($parent == 0){
+            $left_nav_parent_prams = sp_get_term($term_id);
+            $left_nav_child_prams = sp_get_child_terms($term_id);
+        } else {
+            $left_nav_parent_prams = sp_get_term($parent);
+            $left_nav_child_prams = sp_get_child_terms($parent);
+        }
+    ?>
+    <div class="am-u-lg-3 am-padding-horizontal-xs am-hide-sm-only">
+        <section data-am-widget="accordion" class="am-accordion am-accordion-default am-margin-0 am-no-layout" data-am-accordion="{ &quot;multiple&quot;: true }">
+            <dl class="am-accordion-item am-active">
+                <dt class="am-accordion-title am-text-default" style="color:#333;">{$left_nav_parent_prams.name}</dt>
+                <dd class="am-accordion-bd am-collapse am-in">
+                    <div class="am-accordion-content_diy <empty name='left_nav_child_prams'>am-hide</empty>">
+                        <dl class="am-margin-bottom-0">
+                            <volist name="left_nav_child_prams" id="v">
+                                <dd class="am-padding-vertical-xs_diy"><a href="{:leuu('portal/list/index',array('id'=>$v['term_id']))}" class="am-text-sm">{$v.name}</a></dd>
+                            </volist>
+                        </dl>
+                    </div>
+                </dd>
+            </dl>
+        </section>
+    </div>
+    <!--right-->
+    <div class="am-u-lg-9 am-padding-horizontal-xs">
+        <div class="am-container am-padding-horizontal-0 br_bt br_tp br_lf br_rg">
+            <ol class="am-breadcrumb am-margin-vertical-0 br_bt">
+                <li><a href="/" class="am-icon-home">首页</a></li>
+                <li>{$name}</li>
+                <li>列表中心</li>
+            </ol>
+            <div class="am-container am-padding-horizontal-xs">
+                <div class="am-list-news-bd">
+
+                    <ul class="am-avg-lg-3 am-avg-md-3 am-avg-sm-2 am-padding-top-xs">
+                        <?php
+            $posts=sp_sql_posts_bycatid('11','field:tid,post_title,smeta;order:listorder desc;limit:8');
+        ?>
+                        <volist name="posts" id="v">
+                            <php>
+                                $photo = json_decode($v['smeta'],true);
+                                $photo = $photo['photo'][0];
+                            </php>
+
+                            <li>
+                                <div class="am-u-lg-12 am-u-lg-centered am-u-md-12 am-u-md-centered am-u-sm-10 am-u-sm-centered">
+                                    <a href="{$v.tid}"><img src="{:sp_get_asset_upload_path($photo['url'])}" alt="{$photo['alt']}" class="am-img-responsive"></a>
+                                </div>
+                                <p class="am-text-center am-margin-vertical-xs am-text-xl am-show-md-up"><a href="{$v.tid}">{$v.post_title}</a></p>
+                                <p class="am-text-center am-margin-vertical-xs am-text-sm am-show-sm-only"><a href="{$v.tid}">{$v.post_title}</a></p>
+                            </li>
+                        </volist>
+                    </ul>
+
+                    <div class="pagination"><ul>{$posts_lists['page']}</ul></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--right end-->
+</div>
+
+<tc_include file="Public:footer"/>
+<!-- JavaScript -->
+<tc_include file="Public:scripts"/>
+</body>
+</html>
