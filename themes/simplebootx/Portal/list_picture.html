@@ -54,21 +54,26 @@
                 <div class="am-list-news-bd">
 
                     <ul class="am-avg-lg-3 am-avg-md-3 am-avg-sm-2 am-padding-top-xs">
-                        <?php
-            $posts=sp_sql_posts_bycatid('11','field:tid,post_title,smeta;order:listorder desc;limit:8');
-        ?>
-                        <volist name="posts" id="v">
+                         <php>
+                            if($parent ==0){
+                            $posts_lists = sp_sql_posts_paged_bycatid($cat_id,"field:tid,post_title,smeta;order:listorder ASC,post_date DESC;",8);
+                            } else {
+                            $posts_lists = sp_sql_posts_paged("cid:$cat_id;field:tid,post_title,smeta;order:listorder ASC,post_date DESC;",8);
+                            }
+                        </php>
+                        <volist name="posts_lists['posts']" id="v">
                             <php>
                                 $photo = json_decode($v['smeta'],true);
                                 $photo = $photo['photo'][0];
                             </php>
 
                             <li>
-                                <div class="am-u-lg-12 am-u-lg-centered am-u-md-12 am-u-md-centered am-u-sm-10 am-u-sm-centered">
-                                    <a href="{$v.tid}"><img src="{:sp_get_asset_upload_path($photo['url'])}" alt="{$photo['alt']}" class="am-img-responsive"></a>
+                                <div>
+                                    <div class="am-u-lg-12 am-u-lg-centered am-u-md-12 am-u-md-centered am-u-sm-10 am-u-sm-centered">
+                                        <a href="{$v.tid}"><img src="{:sp_get_asset_upload_path($photo['url'])}" alt="{$photo['alt']}" class="am-img-responsive"></a>
+                                    </div>
+                                    <p class="am-text-center am-margin-vertical-xs am-text-sm"><a href="{$v.tid}">{$v.post_title}</a></p>
                                 </div>
-                                <p class="am-text-center am-margin-vertical-xs am-text-xl am-show-md-up"><a href="{$v.tid}">{$v.post_title}</a></p>
-                                <p class="am-text-center am-margin-vertical-xs am-text-sm am-show-sm-only"><a href="{$v.tid}">{$v.post_title}</a></p>
                             </li>
                         </volist>
                     </ul>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/JavaScript">
+
+    function QQtalk(QQnum){
+
+        var sitename="网站名称或者网址,网站制作学习网,www.forasp.cn";
+
+        Link="tencent://message/?uin="+QQnum+"&WebSiteName="+sitename;
+
+        try{
+
+            var xmlhttp=new ActiveXObject("TimwpDll.TimwpCheck");
+
+            this.location.href=Link;
+
+            var n = xmlhttp.GetVersion();
+
+            if (n >= 2.1)
+
+                this.location.href=Link;
+
+            else
+
+            {
+
+                if(confirm(sitename+"\n温馨提示：\r\n　　请您访问http://im.qq.com/下载新版的QQ/TM以支持与企业商家在线交流！")){
+
+                    window.target="_top";
+
+                    window.open("http://im.qq.com/");
+
+                }
+
+            }
+
+        }catch(e){//不支持
+
+            if(confirm(sitename+"\n温馨提示：\r\n　　请您访问http://im.qq.com/下载新版的QQ/TM以支持与企业商家在线交流！")){
+
+//alert(sitename+"\n温馨提示：\r\n　　请您访问http://im.qq.com/下载新版的QQ/TM以支持与企业商家在线交流！");
+
+                window.target="_top";
+
+                window.open("http://im.qq.com/");
+
+            }
+
+        }
+
+        return false;
+
+    }
+
+</script>
+
+<input type="button" onclick = "javascript:QQtalk('937037236');">
+<a href="javascript:QQtalk('937037236');"><img src="public/images/headicon.png"></a>
+
+</body>
+</html>

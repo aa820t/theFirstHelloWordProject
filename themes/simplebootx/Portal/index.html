@@ -46,9 +46,9 @@
         </div>
         <div class="am-list-news-bd">
             <ul class="am-list am-padding-horizontal-xs">
-                <?php
+                <php>
 					$posts=sp_sql_posts('cid:4;field:tid,post_title,post_date;order:listorder desc;limit:4');
-				?>
+				</php>
                 <volist name="posts" id="v">
                     <li class="am-g am-list-item-dated" style="border:0">
                         <a href="{$v.tid}" title="{$v.post_title}" class="am-list-item-hd ">{$v.post_title}</a>
@@ -67,12 +67,14 @@
             <li class="am-padding-horizontal-xs">
                 <a class="am-btn am-btn-primary am-btn-block" href="" target="_blank">
                     <div><i class="am-icon-desktop am-icon-lg" style="margin-bottom:3px;"></i></div>
-                    产品中心</a>
+                    在线下单
+                </a>
             </li>
             <li class="am-padding-horizontal-xs">
                 <a class="am-btn am-btn-primary am-btn-block" href="fangan/" target="_blank">
                     <div><i class="am-icon-clipboard am-icon-lg" style="margin-bottom:3px;"></i></div>
-                    解决方案</a>
+                    解决方案
+                </a>
             </li>
         </ul>
         <ul class="am-avg-lg-2 am-avg-md-2 am-avg-sm-2 am-margin-top-xs">
@@ -101,9 +103,9 @@
         </div>
         <div class="am-list-news-bd">
             <ul class="am-list am-padding-horizontal-xs">
-                <?php
+                <php>
 					$posts=sp_sql_posts('cid:4;field:tid,post_title,post_date;order:listorder desc;limit:4');
-				?>
+				</php>
                 <volist name="posts" id="v">
                     <li class="am-g am-list-item-dated" style="border:0">
                         <a href="{$v.tid}" title="{$v.post_title}" class="am-list-item-hd ">{$v.post_title}</a>
@@ -123,9 +125,9 @@
         </div>
         <div class="am-list-news-bd">
             <ul class="am-list am-padding-horizontal-xs">
-                <?php
+                <php>
 					$posts=sp_sql_posts('cid:4;field:tid,post_title,post_date;order:listorder desc;limit:4');
-				?>
+                </php>
                 <volist name="posts" id="v">
                     <li class="am-g am-list-item-dated" style="border:0">
                         <a href="{$v.tid}" title="{$v.post_title}" class="am-list-item-hd ">{$v.post_title}</a>
@@ -147,9 +149,9 @@
         <div data-am-widget="slider" class="am-slider am-slider-c1 am-no-layout" data-am-slider="{&quot;directionNav&quot;:false}">
             <div class="am-viewport" style="overflow: hidden; position: relative;">
                 <ul class="am-slides" style="width: 1200%; transition-duration: 0.6s; transform: translate3d(-1236px, 0px, 0px);">
-                    <?php
-                    $posts=sp_sql_posts_bycatid('11','field:tid,post_title,smeta;order:listorder desc;limit:8');
-                  ?>
+                    <php>
+                        $posts=sp_sql_posts_bycatid('11','field:tid,post_title,smeta;order:listorder desc;limit:8');
+                    </php>
                     <volist name="posts" id="v">
                         <php>
                             $photo = json_decode($v['smeta'],true);
@@ -181,21 +183,22 @@
         </nav>
     </div>
     <ul class="am-avg-lg-3 am-avg-md-3 am-avg-sm-2 am-padding-top-xs">
-        <?php
+        <php>
             $posts=sp_sql_posts_bycatid('11','field:tid,post_title,smeta;order:listorder desc;limit:8');
-        ?>
+        </php>
         <volist name="posts" id="v">
             <php>
                 $photo = json_decode($v['smeta'],true);
                 $photo = $photo['photo'][0];
             </php>
-
             <li>
-                <div class="am-u-lg-12 am-u-lg-centered am-u-md-12 am-u-md-centered am-u-sm-10 am-u-sm-centered">
-                    <a href="{$v.tid}"><img src="{:sp_get_asset_upload_path($photo['url'])}" alt="{$photo['alt']}" class="am-img-responsive"></a>
+                <div>
+                    <div class="am-u-lg-12 am-u-lg-centered am-u-md-12 am-u-md-centered am-u-sm-10 am-u-sm-centered">
+                        <a href="{$v.tid}"><img src="{:sp_get_asset_upload_path($photo['url'])}" alt="{$photo['alt']}" class="am-img-responsive"></a>
+                    </div>
+                    <p class="am-text-center am-margin-vertical-xs am-text-xl am-show-md-up"><a href="{$v.tid}">{$v.post_title}</a></p>
+                    <p class="am-text-center am-margin-vertical-xs am-text-sm am-show-sm-only"><a href="{$v.tid}">{$v.post_title}</a></p>
                 </div>
-                <p class="am-text-center am-margin-vertical-xs am-text-xl am-show-md-up"><a href="{$v.tid}">{$v.post_title}</a></p>
-                <p class="am-text-center am-margin-vertical-xs am-text-sm am-show-sm-only"><a href="{$v.tid}">{$v.post_title}</a></p>
             </li>
         </volist>
     </ul>
@@ -209,9 +212,9 @@
         </nav>
     </div>
     <ul class="am-list" style="margin:0 10px 0 0">
-        <?php
+        <php>
             $posts=sp_sql_posts('cid:4;field:tid,post_title,post_date;order:listorder desc;limit:4');
-        ?>
+        </php>
         <volist name="posts" id="v">
             <li class="am-u-lg-6 am-u-md-12 am-u-sm-12 am-u-end am-list-item-dated" style="border:0">
                 <a href="{$v.tid}" title="{$v.post_title}" class="am-list-item-hd">{$v.post_title}</a>

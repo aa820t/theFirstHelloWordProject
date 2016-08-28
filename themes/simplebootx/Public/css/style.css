@@ -222,7 +222,7 @@
 }
 
 .am-padding-vertical-xs_diy:hover,
-.am-list-item-dated:hover{
+.am-list-item-dated:hover {
     background-color: #f5f5f5;
 }
 
@@ -307,10 +307,26 @@
     padding-bottom: 2rem;
 }
 
-.prevArticleLink{
+.prevArticleLink {
     margin-bottom: 5px;
 }
-.nextArticleLink{
+
+.nextArticleLink {
     margin-bottom: 15px;
 }
+
+.am-padding-top-xs li {
+    padding: 5px;
+}
+
+.am-padding-top-xs li > div {
+    border: 1px #e5e5e5 solid;
+    padding-top: 10px;
+}
+
+.am-padding-top-xs li > div:hover {
+    border-color: #0066ff;
+}
+
+
 
