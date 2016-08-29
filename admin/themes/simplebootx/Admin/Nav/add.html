@@ -43,10 +43,10 @@
 						<select name="href" id="selecthref">
 							<option value="home">{:L('HOME')}</option>
 							<foreach name="navs" item="vo">
-							<option disabled>{$vo.name}</option>
-							<foreach name="vo['items']" item="voo">
-							<option value='{$voo.rule}'>{$voo.label}</option>
-							</foreach>
+								<option disabled style="color:red">------- {$vo.name} -------</option>
+								<foreach name="vo['items']" item="voo">
+									<option value='{$voo.rule}'>{$voo.label}</option>
+								</foreach>
 							</foreach>
 						</select>
 					</div>

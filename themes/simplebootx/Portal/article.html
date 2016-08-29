@@ -13,7 +13,7 @@
 	<!--banner-->
 	<tc_include file="Public:otherPageBanner" />
 	<!--left-->
-	<?php
+	<php>
         if($term['parent'] == 0){
             $left_nav_parent_prams = sp_get_term($term['term_id']);
             $left_nav_child_prams = sp_get_child_terms($term['term_id']);
@@ -21,7 +21,7 @@
             $left_nav_parent_prams = sp_get_term($term['parent']);
             $left_nav_child_prams = sp_get_child_terms($term['parent']);
         }
-    ?>
+	</php>
 	<div class="am-u-lg-3 am-padding-horizontal-xs am-hide-sm-only">
 		<section data-am-widget="accordion" class="am-accordion am-accordion-default am-margin-0 am-no-layout" data-am-accordion="{ &quot;multiple&quot;: true }">
 			<dl class="am-accordion-item am-active">

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+	<html class="js cssanimations">
+	<head>
+		<title>{$post_title} {$site_name} </title>
+		<meta name="keywords" content="{$post_keywords}" />
+		<meta name="description" content="{$post_excerpt}">
+		<tc_include file="Public:head" />
+	</head>
+<body>
+<tc_include file="Public:nav" />
+
+<div class="am-container am-padding-horizontal-0 am-margin-vertical">
+	<!--banner-->
+	<tc_include file="Public:otherPageBanner" />
+	<!--left-->
+	<php>
+		/* 联系我们 */
+		$nav_menu = diy_get_menu('25');
+	</php>
+	<div class="am-u-lg-3 am-padding-horizontal-xs am-hide-sm-only">
+		<section data-am-widget="accordion" class="am-accordion am-accordion-default am-margin-0 am-no-layout" data-am-accordion="{ &quot;multiple&quot;: true }">
+			<dl class="am-accordion-item am-active">
+				<dt class="am-accordion-title am-text-default" style="color:#333;">{$nav_menu['parent']['label']}</dt>
+				<dd class="am-accordion-bd am-collapse am-in">
+					<div class="am-accordion-content_diy <empty name='nav_menu.child'>am-hide</empty>">
+						<dl class="am-margin-bottom-0">
+							<volist name="nav_menu.child" id="v">
+								<dd class="am-padding-vertical-xs_diy"><a href="{$v.href}" class="am-text-sm">{$v.label}</a></dd>
+							</volist>
+						</dl>
+					</div>
+				</dd>
+			</dl>
+		</section>
+	</div>
+	<div class="am-u-lg-9 am-padding-horizontal-xs">
+		<div class="am-container am-padding-horizontal-0 br_bt br_tp br_lf br_rg">
+			<ol class="am-breadcrumb am-margin-vertical-0 br_bt">
+				<li><a href="/" class="am-icon-home">首页</a></li>
+				<li>{$post_title}</li>
+			</ol>
+			<div class="am-container am-padding-horizontal-xs">
+				<article class="am-article">
+					<div class="am-article-hd am-text-center">
+						<h1 class="am-article-title am-margin-vertical">{$post_title}</h1>
+					</div>
+					<hr>
+					<div class="am-article-bd">
+						{$post_content}
+					</div>
+				</article>
+			</div>
+		</div>
+	</div>
+	<!--right end-->
+</div>
+              
+<tc_include file="Public:footer"/>
+
+<tc_include file="Public:scripts"/>
+</body>
+</html>
