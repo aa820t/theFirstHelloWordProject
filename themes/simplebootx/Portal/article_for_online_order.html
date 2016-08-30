@@ -1,92 +1,173 @@
 <!DOCTYPE html>
-	<html class="js cssanimations">
-	<head>
-		<title>{$post_title} {$site_name} </title>
-		<meta name="keywords" content="{$post_keywords}" />
-		<meta name="description" content="{$post_excerpt}">
-		<tc_include file="Public:head" />
-	</head>
+<html class="js cssanimations">
+<head>
+    <title>{$post_title} {$site_name} </title>
+    <meta name="keywords" content="{$post_keywords}"/>
+    <meta name="description" content="{$post_excerpt}">
+    <tc_include file="Public:head"/>
+</head>
 <body>
-<tc_include file="Public:nav" />
+<tc_include file="Public:nav"/>
 
 <div class="am-container am-padding-horizontal-0 am-margin-vertical">
-	<!--banner-->
-	<tc_include file="Public:otherPageBanner" />
-	<!--left-->
-	<div class="am-u-lg-3 am-padding-horizontal-xs am-hide-sm-only">
-		<section data-am-widget="accordion" class="am-accordion am-accordion-default am-margin-0 am-no-layout" data-am-accordion="{ &quot;multiple&quot;: true }">
-			<dl class="am-accordion-item am-active">
-				<dt class="am-accordion-title am-text-default" style="color:#333;">在线下单</dt>
-				<dd class="am-accordion-bd am-collapse am-in">
-					<div class="am-accordion-content_diy am-hide">
-						<dl class="am-margin-bottom-0">
-							<dd class="am-padding-vertical-xs_diy"><a href="" class="am-text-sm"></a></dd>
-						</dl>
-					</div>
-				</dd>
-			</dl>
-		</section>
-	</div>
-	<div class="am-u-lg-9 am-padding-horizontal-xs">
-		<div class="am-container am-padding-horizontal-0 br_bt br_tp br_lf br_rg">
-			<ol class="am-breadcrumb am-margin-vertical-0 br_bt">
-				<li><a href="/" class="am-icon-home">首页</a></li>
-				<li>在线下单</li>
-			</ol>
-			<div class="am-container am-padding-horizontal-xs">
-				<article class="am-article">
-					<div class="am-article-hd am-text-center">
-						<h1 class="am-article-title am-margin-vertical">{$post_title}</h1>
-					</div>
-					<hr>
-					<div class="am-article-bd">
-						<p>说明</p>
-						<form class="am-form">
-							<fieldset>
+    <!--banner-->
+    <tc_include file="Public:otherPageBanner"/>
+    <!--left-->
+    <div class="am-u-lg-3 am-padding-horizontal-xs am-hide-sm-only">
+        <section data-am-widget="accordion" class="am-accordion am-accordion-default am-margin-0 am-no-layout" data-am-accordion="{ &quot;multiple&quot;: true }">
+            <dl class="am-accordion-item am-active">
+                <dt class="am-accordion-title am-text-default" style="color:#333;">在线下单</dt>
+                <dd class="am-accordion-bd am-collapse am-in">
+                    <div class="am-accordion-content_diy am-hide">
+                        <dl class="am-margin-bottom-0">
+                            <dd class="am-padding-vertical-xs_diy"><a href="" class="am-text-sm"></a></dd>
+                        </dl>
+                    </div>
+                </dd>
+            </dl>
+        </section>
+    </div>
+    <div class="am-u-lg-9 am-padding-horizontal-xs">
+        <div class="am-container am-padding-horizontal-0 br_bt br_tp br_lf br_rg">
+            <ol class="am-breadcrumb am-margin-vertical-0 br_bt">
+                <li><a href="/" class="am-icon-home">首页</a></li>
+                <li>在线下单</li>
+            </ol>
+            <div class="am-container am-padding-horizontal-xs">
+                <article class="am-article">
+                    <div class="am-article-hd am-text-center">
+                        <h1 class="am-article-title am-margin-vertical">{$post_title}</h1>
+                    </div>
+                    <hr>
+                    <div class="am-article-bd">
+                        <p>如果您的家居正在受到白蚁虫害侵扰，或即将遭受白蚁虫害侵袭，请联系我们！<br>
+                            在线下单成功后，30分钟内我们将安排师傅上门检查白蚁危害情况及进行灭治服务。
+                        </p>
+                        <form class="am-form">
+                            <fieldset>
 
-								<div class="am-form-group">
-									<label for="user_name">姓名</label>
-									<input type="email" class="am-radius" id="user_name" placeholder="请输入姓名">
-								</div>
+                                <div class="am-form-group">
+                                    <label for="userName"><span style="color: red">*&nbsp;</span>姓名</label>
+                                    <input type="text" class="am-radius" id="userName" placeholder="请输入姓名" required value="ddd">
+                                </div>
 
-								<div class="am-form-group">
-									<label for="phone_num">电话</label>
-									<input type="password" class="am-radius" id="phone_num" placeholder="请输入电话">
-								</div>
+                                <div class="am-form-group">
+                                    <label for="phoneNum"><span style="color: red">*&nbsp;</span>电话</label>
+                                    <input type="text" class="am-radius" id="phoneNum" placeholder="请输入电话" required value="15812350950">
+                                </div>
 
-								<div class="am-form-group">
-									<label for="address">详细地址</label>
-									<input type="password" class="am-radius" id="address" placeholder="请输入详细地址">
-								</div>
+                                <div class="am-form-group">
+                                    <label for="address">详细地址</label>
+                                    <input type="text" class="am-radius" id="address" placeholder="请输入详细地址" value="add">
+                                </div>
 
-								<div class="am-form-group">
-									<label for="remark">备注</label>
-									<textarea class="am-radius" rows="3" id="remark" placeholder="想留言点什么?"></textarea>
-								</div>
+                                <div class="am-form-group">
+                                    <label for="remark">备注</label>
+                                    <textarea class="am-radius" rows="3" id="remark" placeholder="想留言说点什么?">ss</textarea>
+                                </div>
 
-								<p style="display: table;margin: 0 auto">
-									<button type="button" class="am-btn am-btn-default am-radius">提交</button>
-									&nbsp;
-									<button type="button" class="am-btn am-btn-default am-radius">重置</button>
-								</p>
-							</fieldset>
-						</form>
-					</div>
-				</article>
-			</div>
-		</div>
-	</div>
-	<!--right end-->
+                                <div class="am-form-group">
+                                    <label for="verifyCode"><span style="color: red">*&nbsp;</span>验证码</label>
+                                    <input type="text" class="am-u-sm-10 am-radius" id="verifyCode" placeholder="请输入验证码">
+
+                                </div>
+                                <div style="margin-top: 4rem;height: 50px;margin-bottom: 2rem;">
+                                    {:sp_verifycode_img('&use_curve=0')}
+                                </div>
+
+                                <p style="display: table;margin: 0 auto">
+                                    <button type="button" class="am-btn am-btn-default am-radius" id="saveInfo">提交</button>
+                                    &nbsp;
+                                    <button type="button" class="am-btn am-btn-default am-radius" id="reset">重置</button>
+                                </p>
+                            </fieldset>
+                        </form>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+    <!--right end-->
 </div>
-              
+
 <tc_include file="Public:footer"/>
 
 <tc_include file="Public:scripts"/>
 
 <script type="text/javascript">
-	$(function () {
-		layer.alert('内容');
-	})
+    //---- 重新加载验证码 ----
+    function reLoadVerify() {
+        $(".verify_img").trigger("click");
+    }
+
+    //---- 重置表单 ----
+    function reset() {
+        $("input").val("");
+        $("textarea").val("");
+        reLoadVerify();
+    }
+
+    $(function () {
+        $("#userName").focus();
+
+        //---- 提交下单内容 ----
+        $("#saveInfo").on("click", function () {
+            var postData = {};
+            postData.userName = $("#userName").val();
+            postData.phoneNum = $("#phoneNum").val();
+            postData.address = $("#address").val();
+            postData.remark = $("#remark").val();
+            postData.verifyCode = $("#verifyCode").val();
+
+            //---- 验证 ----
+            if (postData.userName == '') {
+                layer.msg('请填写姓名', {icon: 0});
+                $("#userName").focus();
+                return false;
+            }
+
+            if (postData.phoneNum == '') {
+                layer.msg('请填写电话号码', {icon: 0});
+                $("#phoneNum").focus();
+                return false;
+            }
+
+            //---- 号码验证 ----
+            if (!/^1\d{10}$|^(0\d{2,3}-?|\(0\d{2,3}\))?[1-9]\d{4,7}(-\d{1,8})?$/.test(postData.phoneNum)) {
+                layer.msg('请填写正确电话号码', {icon: 0});
+                $("#phoneNum").focus();
+                return false;
+            }
+
+            if (postData.verifyCode == '') {
+                layer.msg('请填写验证码', {icon: 0});
+                $("#verifyCode").focus();
+                return false;
+            }
+
+            console.log(postData);
+
+            //---- 保存 在线下单 ----
+            $.post("{:U('Portal/OnlineOrder/saveOrder')}", postData, function (res) {
+                console.log(res);
+
+                if (res.status == 'success') {
+                    layer.msg(res.msg, {icon: 6});
+                    reset();
+                } else {
+                    layer.msg(res.msg, {icon: 5});
+                    reLoadVerify();
+                }
+
+            }, "json")
+        });
+
+        //---- 点击重置 ----
+        $("#reset").on("click",function () {
+            reset();
+            $("#userName").focus();
+        })
+    })
 </script>
 </body>
 </html>
