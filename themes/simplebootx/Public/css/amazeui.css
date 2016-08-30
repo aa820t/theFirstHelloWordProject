@@ -1682,7 +1682,7 @@ fieldset[disabled] .am-btn {
   border-radius: 1000px;
 }
 .am-btn.am-radius {
-  border-radius: 2px;
+  border-radius: 4px;
 }
 .am-btn-default {
   color: #444444;
@@ -2564,7 +2564,7 @@ fieldset[disabled] .am-form-field {
 .am-form input[type="tel"].am-radius,
 .am-form input[type="color"].am-radius,
 .am-form-field.am-radius {
-  border-radius: 2px;
+  border-radius: 5px;
 }
 .am-form select.am-round,
 .am-form textarea.am-round,

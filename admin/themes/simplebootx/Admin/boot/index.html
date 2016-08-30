@@ -153,7 +153,7 @@ right: initial !important;}
 		<div class="navbar-inner">
 			<div class="container-fluid">
 				<a href="{:U('index/index')}" class="brand"> <small> 
-				<img src="__TMPL__Public/assets/images/logo-18.png">
+				<!--<img src="__TMPL__Public/assets/images/logo-18.png">-->
 						{:L('ADMIN_CENTER')}
 				</small>
 				</a>
@@ -161,23 +161,27 @@ right: initial !important;}
 					
 					<a class="btn btn-small btn-warning" href="__ROOT__/" title="{:L('WEBSITE_HOME_PAGE')}" target="_blank">
 						<i class="fa fa-home"></i>
+						{:L('WEBSITE_HOME_PAGE')}
 					</a>
 					
 					<if condition="sp_auth_check(sp_get_current_admin_id(),'portal/AdminTerm/index')">
 					<a class="btn btn-small btn-success" href="javascript:openapp('{:U('portal/AdminTerm/index')}','index_termlist','{:L('PORTAL_ADMINTERM_INDEX')}');" title="{:L('PORTAL_ADMINTERM_INDEX')}">
 						<i class="fa fa-th"></i>
+						{:L('PORTAL_ADMINTERM_INDEX')}
 					</a>
 					</if>
 					
 					<if condition="sp_auth_check(sp_get_current_admin_id(),'portal/AdminPost/index')">
 					<a class="btn btn-small btn-info" href="javascript:openapp('{:U('portal/AdminPost/index')}','index_postlist','{:L('PORTAL_ADMINPOST_INDEX')}');" title="{:L('PORTAL_ADMINPOST_INDEX')}">
 						<i class="fa fa-pencil"></i>
+						{:L('PORTAL_ADMINPOST_INDEX')}
 					</a>
 					</if>
 
 					<if condition="sp_auth_check(sp_get_current_admin_id(),'admin/setting/clearcache')">
 					<a class="btn btn-small btn-danger" href="javascript:openapp('{:U('admin/setting/clearcache')}','index_clearcache','{:L('ADMIN_SETTING_CLEARCACHE')}');" title="{:L('ADMIN_SETTING_CLEARCACHE')}">
 						<i class="fa fa-trash-o"></i>
+						{:L('ADMIN_SETTING_CLEARCACHE')}
 					</a>
 					</if>
 				</div>

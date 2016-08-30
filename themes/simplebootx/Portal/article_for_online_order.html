@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+	<html class="js cssanimations">
+	<head>
+		<title>{$post_title} {$site_name} </title>
+		<meta name="keywords" content="{$post_keywords}" />
+		<meta name="description" content="{$post_excerpt}">
+		<tc_include file="Public:head" />
+	</head>
+<body>
+<tc_include file="Public:nav" />
+
+<div class="am-container am-padding-horizontal-0 am-margin-vertical">
+	<!--banner-->
+	<tc_include file="Public:otherPageBanner" />
+	<!--left-->
+	<div class="am-u-lg-3 am-padding-horizontal-xs am-hide-sm-only">
+		<section data-am-widget="accordion" class="am-accordion am-accordion-default am-margin-0 am-no-layout" data-am-accordion="{ &quot;multiple&quot;: true }">
+			<dl class="am-accordion-item am-active">
+				<dt class="am-accordion-title am-text-default" style="color:#333;">在线下单</dt>
+				<dd class="am-accordion-bd am-collapse am-in">
+					<div class="am-accordion-content_diy am-hide">
+						<dl class="am-margin-bottom-0">
+							<dd class="am-padding-vertical-xs_diy"><a href="" class="am-text-sm"></a></dd>
+						</dl>
+					</div>
+				</dd>
+			</dl>
+		</section>
+	</div>
+	<div class="am-u-lg-9 am-padding-horizontal-xs">
+		<div class="am-container am-padding-horizontal-0 br_bt br_tp br_lf br_rg">
+			<ol class="am-breadcrumb am-margin-vertical-0 br_bt">
+				<li><a href="/" class="am-icon-home">首页</a></li>
+				<li>在线下单</li>
+			</ol>
+			<div class="am-container am-padding-horizontal-xs">
+				<article class="am-article">
+					<div class="am-article-hd am-text-center">
+						<h1 class="am-article-title am-margin-vertical">{$post_title}</h1>
+					</div>
+					<hr>
+					<div class="am-article-bd">
+						<p>说明</p>
+						<form class="am-form">
+							<fieldset>
+
+								<div class="am-form-group">
+									<label for="user_name">姓名</label>
+									<input type="email" class="am-radius" id="user_name" placeholder="请输入姓名">
+								</div>
+
+								<div class="am-form-group">
+									<label for="phone_num">电话</label>
+									<input type="password" class="am-radius" id="phone_num" placeholder="请输入电话">
+								</div>
+
+								<div class="am-form-group">
+									<label for="address">详细地址</label>
+									<input type="password" class="am-radius" id="address" placeholder="请输入详细地址">
+								</div>
+
+								<div class="am-form-group">
+									<label for="remark">备注</label>
+									<textarea class="am-radius" rows="3" id="remark" placeholder="想留言点什么?"></textarea>
+								</div>
+
+								<p style="display: table;margin: 0 auto">
+									<button type="button" class="am-btn am-btn-default am-radius">提交</button>
+									&nbsp;
+									<button type="button" class="am-btn am-btn-default am-radius">重置</button>
+								</p>
+							</fieldset>
+						</form>
+					</div>
+				</article>
+			</div>
+		</div>
+	</div>
+	<!--right end-->
+</div>
+              
+<tc_include file="Public:footer"/>
+
+<tc_include file="Public:scripts"/>
+
+<script type="text/javascript">
+	$(function () {
+		layer.alert('内容');
+	})
+</script>
+</body>
+</html>
