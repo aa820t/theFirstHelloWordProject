@@ -1,0 +1,86 @@
+<admintpl file="header" />
+</head>
+<body>
+	<div class="wrap js-check-wrap">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="javascript:;">在线下单</a></li>
+		</ul>
+		<form class="well form-search" method="post" action="{:U('index')}">
+			分类： 
+			<select class="select_2" name="deal_status">
+				<option value="0" <eq name="deal_status" value="0">selected</eq>>未处理</option>
+				<option value="1" <eq name="deal_status" value="1">selected</eq>>已处理</option>
+				<option value="2" <eq name="deal_status" value="2">selected</eq>>已取消</option>
+				<option value="" <eq name="deal_status" value="">selected</eq>>全部</option>
+			</select> &nbsp;&nbsp;
+			时间：
+			<input type="text" name="start_time" class="js-date" value="{$formget.start_time|default=''}" style="width: 80px;" autocomplete="off"> -
+			<input type="text" class="js-date" name="end_time" value="{$formget.end_time|default=''}" style="width: 80px;" autocomplete="off"> &nbsp; &nbsp;
+			关键字： 
+			<input type="text" name="keyword" style="width: 200px;" value="{$formget.keyword}" placeholder="请输入关键字...">
+			<input type="submit" class="btn btn-primary" value="搜索" />
+		</form>
+		<form class="js-ajax-form" action="" method="post">
+			<div class="table-actions">
+				<button class="btn btn-primary btn-small js-ajax-submit" type="submit" data-action="{:U('changeStatus',array('deal_status'=>1))}" data-subcheck="true">批量已处理</button>
+				<button class="btn btn-primary btn-small js-ajax-submit" type="submit" data-action="{:U('changeStatus',array('deal_status'=>2))}" data-subcheck="true">批量已取消</button>
+				<button class="btn btn-primary btn-small js-ajax-submit" type="submit" data-action="{:U('changeStatus',array('deal_status'=>0))}" data-subcheck="true">批量未处理</button>
+			</div>
+			<table class="table table-hover table-bordered table-list">
+				<thead>
+					<tr>
+						<th width="15"><label><input type="checkbox" class="js-check-all" data-direction="x" data-checklist="js-check-x"></label></th>
+						<th width="30">ID</th>
+						<th width="50">姓名</th>
+						<th width="50">电话</th>
+						<th width="100">详细地址</th>
+						<th width="100">备注</th>
+						<th width="50">下单时间</th>
+						<th width="50">状态</th>
+						<th width="50">操作</th>
+					</tr>
+				</thead>
+				<php>
+					$status=array("0"=>"未处理","1"=>"已处理","2"=>"已取消");
+				</php>
+				<foreach name="orders" item="vo">
+				<tr>
+					<td><input type="checkbox" class="js-check" data-yid="js-check-y" data-xid="js-check-x" name="ids[]" value="{$vo.id}" title="ID:{$vo.id}"></td>
+					<td>{$vo.id}</td>
+					<td>{$vo.user_name}</td>
+					<td>{$vo.phone}</td>
+					<td>{$vo.address}</td>
+					<td>{$vo.remark}</td>
+					<td>{$vo.create_time}</td>
+					<td>{$status[$vo['deal_status']]}</td>
+					<td>
+
+					</td>
+				</tr>
+				</foreach>
+				<tfoot>
+					<tr>
+						<th width="15"><label><input type="checkbox" class="js-check-all" data-direction="x" data-checklist="js-check-x"></label></th>
+						<th width="50">ID</th>
+						<th width="50">姓名</th>
+						<th width="50">电话</th>
+						<th width="50">详细地址</th>
+						<th width="50">备注</th>
+						<th width="50">下单时间</th>
+						<th width="50">状态</th>
+						<th width="50">操作</th>
+					</tr>
+				</tfoot>
+			</table>
+			<div class="table-actions">
+				<button class="btn btn-primary btn-small js-ajax-submit" type="submit" data-action="{:U('changeStatus',array('deal_status'=>1))}" data-subcheck="true">批量已处理</button>
+				<button class="btn btn-primary btn-small js-ajax-submit" type="submit" data-action="{:U('changeStatus',array('deal_status'=>2))}" data-subcheck="true">批量已取消</button>
+				<button class="btn btn-primary btn-small js-ajax-submit" type="submit" data-action="{:U('changeStatus',array('deal_status'=>0))}" data-subcheck="true">批量未处理</button>
+			</div>
+			<div class="pagination">{$Page}</div>
+		</form>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+
+</body>
+</html>
