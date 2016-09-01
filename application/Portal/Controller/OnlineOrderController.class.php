@@ -1,7 +1,7 @@
 <?php
 /**
  * author:chen yong
- * time:206-08-30 21:00
+ * time:2016-08-30 21:00
  */
 namespace Portal\Controller;
 
@@ -14,8 +14,8 @@ class OnlineOrderController extends Controller {
 
     /**
      * 检查验证码是否正确
-     * @param $code
-     * @param string $id
+     * @param $code 提交的验证码
+     * @param string $id 第几个验证码
      * @return bool
      */
     private function checkVerifyCode($code, $id = '') {
