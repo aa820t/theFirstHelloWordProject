@@ -21,21 +21,11 @@
         <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default am-margin-horizontal-0 am-no-layout">
             <h2 class="am-titlebar-title ">公司简介</h2>
             <nav class="am-titlebar-nav">
-                <a href="news" class="">more »</a>
+                <a href="{:leuu('Portal/Page/index',array('id'=>11))}" class="">more »</a>
             </nav>
         </div>
         <div class="am-list-news-bd">
-            <ul class="am-list am-padding-horizontal-xs">
-                <php>
-					$posts=sp_sql_posts('cid:4;field:tid,post_title,post_date;order:listorder desc;limit:4');
-				</php>
-                <volist name="posts" id="v">
-                    <li class="am-g am-list-item-dated">
-                        <a href="{$v.tid}" title="{$v.post_title}" class="am-list-item-hd ">{$v.post_title}</a>
-                        <span class="am-list-date">{$v.post_date|substr=2,8}</span>
-                    </li>
-                </volist>
-            </ul>
+            待处理
         </div>
     </div>
     <!--快捷通道-->
@@ -45,28 +35,28 @@
         </div>
         <ul class="am-avg-lg-2 am-avg-md-2 am-avg-sm-2 am-margin-top-xs">
             <li class="am-padding-horizontal-xs">
-                <a class="am-btn am-btn-primary am-btn-block" href="" target="_blank">
+                <a class="am-btn am-btn-primary am-btn-block" href="{:leuu('Portal/Page/index',array('id'=>11))}">
                     <div><i class="am-icon-desktop am-icon-lg" style="margin-bottom:3px;"></i></div>
                     在线下单
                 </a>
             </li>
             <li class="am-padding-horizontal-xs">
-                <a class="am-btn am-btn-primary am-btn-block" href="fangan/" target="_blank">
+                <a class="am-btn am-btn-primary am-btn-block" href="{:leuu('Portal/List/index',array('id'=>14))}">
                     <div><i class="am-icon-clipboard am-icon-lg" style="margin-bottom:3px;"></i></div>
-                    解决方案
+                    业务范围
                 </a>
             </li>
         </ul>
         <ul class="am-avg-lg-2 am-avg-md-2 am-avg-sm-2 am-margin-top-xs">
             <li class="am-padding-horizontal-xs">
-                <a class="am-btn am-btn-primary am-btn-block" href="soft/free/" target="_blank">
+                <a class="am-btn am-btn-primary am-btn-block" href="{:leuu('Portal/List/index',array('id'=>26))}">
                     <div><i class="am-icon-download am-icon-lg" style="margin-bottom:3px;"></i></div>
-                    产品试用</a>
+                    资质证书</a>
             </li>
             <li class="am-padding-horizontal-xs">
-                <a class="am-btn am-btn-primary am-btn-block" href="service/" target="_blank">
+                <a class="am-btn am-btn-primary am-btn-block" href="{:leuu('Portal/Page/index',array('id'=>7))}">
                     <div><i class="am-icon-users am-icon-lg" style="margin-bottom:3px;"></i></div>
-                    白蚁服务</a>
+                    联系我们</a>
             </li>
         </ul>
     </div>
@@ -78,17 +68,17 @@
         <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default am-margin-horizontal-0 am-no-layout">
             <h2 class="am-titlebar-title ">新闻资讯</h2>
             <nav class="am-titlebar-nav">
-                <a href="{:leuu('portal/list/index',array('id'=>3))}" class="">more »</a>
+                <a href="{:leuu('Portal/List/index',array('id'=>3))}" class="">more »</a>
             </nav>
         </div>
         <div class="am-list-news-bd">
             <ul class="am-list am-padding-horizontal-xs">
                 <php>
-					$posts=sp_sql_posts('cid:4;field:tid,post_title,post_date;order:listorder desc;limit:4');
-				</php>
+                    $posts=sp_sql_posts('cid:3;field:tid,post_title,post_date;order:listorder desc;limit:4');
+                </php>
                 <volist name="posts" id="v">
                     <li class="am-g am-list-item-dated">
-                        <a href="{$v.tid}" title="{$v.post_title}" class="am-list-item-hd ">{$v.post_title}</a>
+                        <a href="{:leuu('Portal/Article/index',array('id'=>$v['tid']))}" title="{$v.post_title}" class="am-list-item-hd ">{$v.post_title}</a>
                         <span class="am-list-date">{$v.post_date|substr=2,8}</span>
                     </li>
                 </volist>
@@ -106,11 +96,11 @@
         <div class="am-list-news-bd">
             <ul class="am-list am-padding-horizontal-xs">
                 <php>
-					$posts=sp_sql_posts('cid:4;field:tid,post_title,post_date;order:listorder desc;limit:4');
+                    $posts=sp_sql_posts('cid:20;field:tid,post_title,post_date;order:listorder desc;limit:4');
                 </php>
                 <volist name="posts" id="v">
                     <li class="am-g am-list-item-dated">
-                        <a href="{$v.tid}" title="{$v.post_title}" class="am-list-item-hd ">{$v.post_title}</a>
+                        <a href="{:leuu('Portal/Article/index',array('id'=>$v['tid']))}" title="{$v.post_title}" class="am-list-item-hd ">{$v.post_title}</a>
                         <span class="am-list-date">{$v.post_date|substr=2,8}</span>
                     </li>
                 </volist>
@@ -123,34 +113,28 @@
         <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default am-margin-horizontal-0 am-no-layout">
             <h2 class="am-titlebar-title ">案例中心</h2>
             <nav class="am-titlebar-nav">
-                <a href="leuu('portal/list/index',array('id'=>1))" class="">more »</a>
+                <a href="{:leuu('Portal/List/index',array('id'=>11))}" class="">more »</a>
             </nav>
         </div>
-        <div data-am-widget="slider" class="am-slider am-slider-c1 am-no-layout" data-am-slider="{&quot;directionNav&quot;:false}">
-            <div class="am-viewport" style="overflow: hidden; position: relative;">
-                <ul class="am-slides" style="width: 1200%; transition-duration: 0.6s; transform: translate3d(-1236px, 0px, 0px);">
+
+        <div class="am-slider am-slider-c1 am-no-layout" data-am-flexslider>
+            <ul class="am-slides">
+                <php>
+                    $posts=sp_sql_posts_bycatid('11','field:tid,post_title,smeta;order:listorder desc;limit:8');
+                </php>
+                <volist name="posts" id="v">
                     <php>
-                        $posts=sp_sql_posts_bycatid('11','field:tid,post_title,smeta;order:listorder desc;limit:8');
+                        $photo = json_decode($v['smeta'],true);
+                        $photo = $photo['photo'][0];
                     </php>
-                    <volist name="posts" id="v">
-                        <php>
-                            $photo = json_decode($v['smeta'],true);
-                            $photo = $photo['photo'][0];
-                        </php>
-                        <li class="clone" aria-hidden="true" style="width: 309px; float: left; display: block;">
-                            <a href="{$v.tid}">
-                                <img src="{:sp_get_asset_upload_path($photo['url'])}" alt="{$photo['alt']}" draggable="false">
-                                <div class="am-slider-desc">{$v.post_title}</div>
-                            </a>
-                        </li>
-                    </volist>
-                </ul>
-            </div>
-            <ol class="am-control-nav am-control-paging">
-                <volist name="posts" id="v" key="k">
-                    <li><a>{$k}</a><i></i></li>
+                    <li>
+                        <a href="{$vo.slide_url}">
+                            <img src="{:sp_get_asset_upload_path($photo['url'])}" alt="{$photo['alt']}" draggable="false">
+                            <div class="am-slider-desc">{$v.post_title}</div>
+                        </a>
+                    </li>
                 </volist>
-            </ol>
+            </ul>
         </div>
     </div>
 </div>
@@ -159,12 +143,12 @@
     <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default am-margin-horizontal-0 am-no-layout">
         <h2 class="am-titlebar-title ">资质证书</h2>
         <nav class="am-titlebar-nav">
-            <a href="chanping" class="">more »</a>
+            <a href="{:leuu('Portal/List/index',array('id'=>26))}" class="">more »</a>
         </nav>
     </div>
     <ul data-am-widget="gallery" class="am-gallery am-avg-lg-4 am-avg-md-3 am-avg-sm-2 am-gallery-bordered" data-am-gallery="{ pureview: true }">
         <php>
-            $posts=sp_sql_posts_bycatid('11','field:tid,post_title,smeta;order:listorder desc;limit:8');
+            $posts=sp_sql_posts_bycatid('26','field:tid,post_title,smeta;order:listorder desc;limit:8');
         </php>
         <volist name="posts" id="v">
             <php>
@@ -173,7 +157,7 @@
             </php>
             <li>
                 <div class="am-gallery-item">
-                    <a href="{$v.tid}">
+                    <a href="{:leuu('Portal/Article/index',array('id'=>$v['tid']))}">
                         <img src="{:sp_get_asset_upload_path($photo['url'])}" alt="{$photo['alt']}" class="am-img-responsive">
                         <h3 class="am-gallery-title am-text-center">{$v.post_title}</h3>
                     </a>
@@ -192,11 +176,11 @@
     </div>
     <ul class="am-list" style="margin:0 10px 0 0">
         <php>
-            $posts=sp_sql_posts('cid:4;field:tid,post_title,post_date;order:listorder desc;limit:4');
+            $posts=sp_sql_posts('cid:6;field:tid,post_title,post_date;order:listorder desc;limit:4');
         </php>
         <volist name="posts" id="v">
             <li class="am-u-lg-6 am-u-md-12 am-u-sm-12 am-u-end am-list-item-dated">
-                <a href="{$v.tid}" title="{$v.post_title}" class="am-list-item-hd">{$v.post_title}</a>
+                <a href="{:leuu('Portal/Article/index',array('id'=>$v['tid']))}" title="{$v.post_title}" class="am-list-item-hd">{$v.post_title}</a>
                 <span class="am-list-date">{$v.post_date|substr=2,8}</span>
             </li>
         </volist>

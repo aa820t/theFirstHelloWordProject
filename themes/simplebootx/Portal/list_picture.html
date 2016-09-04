@@ -10,22 +10,20 @@
 <!--nav-->
 <tc_include file="Public:nav"/>
 
-
-
+<!--banner-->
+<tc_include file="Public:banner"/>
 
 <div class="am-container am-padding-horizontal-0 am-margin-vertical">
-    <!--banner-->
-    <tc_include file="Public:otherPageBanner"/>
     <!--left-->
-    <?php
+    <php>
         if($parent == 0){
-            $left_nav_parent_prams = sp_get_term($term_id);
-            $left_nav_child_prams = sp_get_child_terms($term_id);
+        $left_nav_parent_prams = sp_get_term($term_id);
+        $left_nav_child_prams = sp_get_child_terms($term_id);
         } else {
-            $left_nav_parent_prams = sp_get_term($parent);
-            $left_nav_child_prams = sp_get_child_terms($parent);
+        $left_nav_parent_prams = sp_get_term($parent);
+        $left_nav_child_prams = sp_get_child_terms($parent);
         }
-    ?>
+    </php>
     <div class="am-u-lg-3 am-padding-horizontal-xs am-hide-sm-only">
         <section data-am-widget="accordion" class="am-accordion am-accordion-default am-margin-0 am-no-layout" data-am-accordion="{ &quot;multiple&quot;: true }">
             <dl class="am-accordion-item am-active">
@@ -53,8 +51,8 @@
             <div class="am-container am-padding-horizontal-xs">
                 <div class="am-list-news-bd">
 
-                    <ul  data-am-widget="gallery" class="am-avg-lg-4 am-avg-md-3 am-avg-sm-2 am-gallery-bordered" data-am-gallery="{ pureview: true }">
-                         <php>
+                    <ul data-am-widget="gallery" class="am-avg-lg-4 am-avg-md-3 am-avg-sm-2 am-gallery-bordered" data-am-gallery="{ pureview: true }">
+                        <php>
                             if($parent ==0){
                             $posts_lists = sp_sql_posts_paged_bycatid($cat_id,"field:tid,post_title,smeta;order:listorder ASC,post_date DESC;",8);
                             } else {
@@ -69,14 +67,16 @@
 
                             <li>
                                 <div class="am-gallery-item">
-                                        <a href="{$v.tid}"><img src="{:sp_get_asset_upload_path($photo['url'])}" alt="{$photo['alt']}" class="am-img-responsive"></a>
+                                    <a href="{$v.tid}"><img src="{:sp_get_asset_upload_path($photo['url'])}" alt="{$photo['alt']}" class="am-img-responsive"></a>
                                     <h3 class="am-gallery-title am-text-center">{$v.post_title}</h3>
                                 </div>
                             </li>
                         </volist>
                     </ul>
 
-                    <div class="pagination"><ul>{$posts_lists['page']}</ul></div>
+                    <div class="pagination">
+                        <ul>{$posts_lists['page']}</ul>
+                    </div>
                 </div>
             </div>
         </div>
