@@ -1,38 +1,22 @@
-<!-- pc_nav -->
-<div class="am-container am-padding-horizontal-0 am-show-md-up">
-    <div class="am-u-lg-12 am-padding-horizontal-0 am-padding-vertical"><a class="brand" href="__ROOT__/"><img src="__TMPL__Public/images/logoadmin.png"/></a></div>
-    <div class="am-u-lg-12 am-padding-0">
-        <php>
-			$effected_id="main-menu";
-		  	$filetpl="<a href='\$href' target='\$target'>\$label</a>";
-            $foldertpl="<a href='javascript:;' target='\$target' class='am-dropdown-toggle' data-am-dropdown-toggle='dropdown'>\$label <span class='am-icon-caret-down'></span></a>";
-            $ul_class="am-dropdown-content" ;
-            $li_class="" ;
-            $style="am-nav am-nav-pills";
-            $showlevel=6;
-            echo sp_get_menu("main",$effected_id,$filetpl,$foldertpl,$ul_class,$li_class,$style,$showlevel,$dropdown);
-        </php>
-    </div>
-</div>
+<header class="am-topbar am-topbar-fixed-top">
+    <div class="am-container">
+        <h1 class="am-topbar-brand">
+            <a href="/">白蚁科技</a>
+        </h1>
 
-<!-- mobile_nav -->
-<header class="am-topbar am-margin-bottom-0 am-show-sm-only">
-    <h1 class="am-topbar-brand">
-        <a href="">白蚁科技</a>
-    </h1>
+        <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#doc-topbar-collapse-4'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
 
-    <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: &#39;#doc-topbar-collapse&#39;}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
-
-    <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
-        <php>
-			$effected_id="main-menu";
-		  	$filetpl="<a href='\$href' target='\$target'>\$label</a>";
-            $foldertpl="<a href='javascript:;' target='\$target' class='am-dropdown-toggle' data-am-dropdown-toggle='dropdown'>\$label <span class='am-icon-caret-down'></span></a>";
-            $ul_class="am-dropdown-content" ;
-            $li_class="" ;
-            $style="am-nav am-nav-pills am-topbar-nav";
-            $showlevel=6;
-            echo sp_get_menu("main",$effected_id,$filetpl,$foldertpl,$ul_class,$li_class,$style,$showlevel,$dropdown);
-        </php>
+        <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
+            <php>
+                $effected_id="main-menu";
+                $filetpl="<a href='\$href' target='\$target'>\$label</a>";
+                $foldertpl="<a href='javascript:;' target='\$target' class='am-dropdown-toggle' data-am-dropdown-toggle>\$label <span class='am-icon-caret-down'></span></a>";
+                $ul_class="am-dropdown-content" ;
+                $li_class="" ;
+                $style="am-nav am-nav-pills am-topbar-nav";
+                $showlevel=6;
+                echo sp_get_menu("main",$effected_id,$filetpl,$foldertpl,$ul_class,$li_class,$style,$showlevel,$dropdown);
+            </php>
+        </div>
     </div>
 </header>

@@ -172,45 +172,6 @@
     color: #fe2a00;
 }
 
-/*分页*/
-#dede_pages {
-    width: 100%;
-}
-
-#dede_pages_1 {
-    width: 100%;
-    margin-top: 3em;
-}
-
-#dede_pages_2 {
-    width: 100%;
-}
-
-#dede_pages ul, #dede_pages_1 ul, #dede_pages_2 ul {
-    float: right;
-}
-
-#dede_pages ul li, #dede_pages_1 ul li, #dede_pages_2 ul li {
-    float: left;
-    font-family: Tahoma;
-    line-height: 17px;
-    margin-right: 6px;
-    border: 1px solid #ccc;
-}
-
-#dede_pages ul li a, #dede_pages_1 ul li a, #dede_pages_2 ul li a {
-    float: left;
-    padding: 2px 4px 2px;
-    color: #555;
-    display: block;
-}
-
-#dede_pages ul li a:hover, #dede_pages_1 ul li a:hover, #dede_pages_2 ul li a:hover {
-    color: #0267b7;
-    text-decoration: none;
-    padding: 2px 4px 2px;
-}
-
 .am-accordion-content_diy {
     margin-top: 0;
     padding: 0.8rem 0 1.2rem;
@@ -293,9 +254,9 @@
     border: 1px solid transparent;
     border-left-width: 0;
 }
-
+/* 内容列表 */
 .am-titlebar {
-    background-color: #fcfcfc;
+    background-color: #fafafa;
 }
 
 .article-infobox {
@@ -307,6 +268,7 @@
     padding-bottom: 2rem;
 }
 
+/* 上下篇链接 */
 .prevArticleLink {
     margin-bottom: 5px;
 }
@@ -315,18 +277,21 @@
     margin-bottom: 15px;
 }
 
-.am-padding-top-xs li {
-    padding: 5px;
+/* 图片画廊 */
+.am-gallery-bordered .am-gallery-title {
+    font-size: 1.7rem;
 }
 
-.am-padding-top-xs li > div {
-    border: 1px #e5e5e5 solid;
-    padding-top: 10px;
+.am-gallery-item {
+    border: #fff 2px solid;
+}
+.am-gallery-item:hover {
+    border: #A5C7FE 2px solid;
+}
+.am-gallery-item a:hover{
+    text-decoration: none;
 }
 
-.am-padding-top-xs li > div:hover {
-    border-color: #0066ff;
-}
 
 
 

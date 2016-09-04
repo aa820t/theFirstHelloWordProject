@@ -53,7 +53,7 @@
             <div class="am-container am-padding-horizontal-xs">
                 <div class="am-list-news-bd">
 
-                    <ul class="am-avg-lg-3 am-avg-md-3 am-avg-sm-2 am-padding-top-xs">
+                    <ul  data-am-widget="gallery" class="am-avg-lg-4 am-avg-md-3 am-avg-sm-2 am-gallery-bordered" data-am-gallery="{ pureview: true }">
                          <php>
                             if($parent ==0){
                             $posts_lists = sp_sql_posts_paged_bycatid($cat_id,"field:tid,post_title,smeta;order:listorder ASC,post_date DESC;",8);
@@ -68,11 +68,9 @@
                             </php>
 
                             <li>
-                                <div>
-                                    <div class="am-u-lg-12 am-u-lg-centered am-u-md-12 am-u-md-centered am-u-sm-10 am-u-sm-centered">
+                                <div class="am-gallery-item">
                                         <a href="{$v.tid}"><img src="{:sp_get_asset_upload_path($photo['url'])}" alt="{$photo['alt']}" class="am-img-responsive"></a>
-                                    </div>
-                                    <p class="am-text-center am-margin-vertical-xs am-text-sm"><a href="{$v.tid}">{$v.post_title}</a></p>
+                                    <h3 class="am-gallery-title am-text-center">{$v.post_title}</h3>
                                 </div>
                             </li>
                         </volist>
