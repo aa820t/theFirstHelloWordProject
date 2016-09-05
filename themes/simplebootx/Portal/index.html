@@ -96,7 +96,7 @@
         <div class="am-list-news-bd">
             <ul class="am-list am-padding-horizontal-xs">
                 <php>
-                    $posts=sp_sql_posts('cid:20;field:tid,post_title,post_date;order:listorder desc;limit:4');
+                    $posts=sp_sql_posts_bycatid('20','field:tid,post_title,post_date;order:listorder desc;limit:4');
                 </php>
                 <volist name="posts" id="v">
                     <li class="am-g am-list-item-dated">
@@ -117,7 +117,7 @@
             </nav>
         </div>
 
-        <div class="am-slider am-slider-c1 am-no-layout" data-am-flexslider>
+        <div class="am-slider am-slider-c1 am-no-layout" data-am-flexslider="{reverse: true,slideshowSpeed: 3000,playAfterPaused:4000}">
             <ul class="am-slides">
                 <php>
                     $posts=sp_sql_posts_bycatid('11','field:tid,post_title,smeta;order:listorder desc;limit:8');
@@ -128,8 +128,8 @@
                         $photo = $photo['photo'][0];
                     </php>
                     <li>
-                        <a href="{$vo.slide_url}">
-                            <img src="{:sp_get_asset_upload_path($photo['url'])}" alt="{$photo['alt']}" draggable="false">
+                        <a href="{:leuu('Portal/Article/index',array('id'=>$v['tid']))}">
+                            <img src="{:sp_get_asset_upload_path($photo['url'])}" alt="{$photo['alt']}" draggable="false" class="am-img-responsive">
                             <div class="am-slider-desc">{$v.post_title}</div>
                         </a>
                     </li>
@@ -171,7 +171,7 @@
     <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default am-margin-horizontal-0 am-no-layout">
         <h2 class="am-titlebar-title ">施工播报</h2>
         <nav class="am-titlebar-nav">
-            <a href="chanping" class="">more »</a>
+            <a href="{:leuu('Portal/List/index',array('id'=>6))}" class="">more »</a>
         </nav>
     </div>
     <ul class="am-list" style="margin:0 10px 0 0">
