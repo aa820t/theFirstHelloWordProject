@@ -35,7 +35,7 @@
         </div>
         <ul class="am-avg-lg-2 am-avg-md-2 am-avg-sm-2 am-margin-top-xs">
             <li class="am-padding-horizontal-xs">
-                <a class="am-btn am-btn-primary am-btn-block" href="{:leuu('Portal/Page/index',array('id'=>11))}">
+                <a class="am-btn am-btn-primary am-btn-block" href="{:leuu('Portal/Page/index',array('id'=>14))}">
                     <div><i class="am-icon-desktop am-icon-lg" style="margin-bottom:3px;"></i></div>
                     在线下单
                 </a>
@@ -74,7 +74,7 @@
         <div class="am-list-news-bd">
             <ul class="am-list am-padding-horizontal-xs">
                 <php>
-                    $posts=sp_sql_posts('cid:3;field:tid,post_title,post_date;order:listorder desc;limit:4');
+                    $posts=sp_sql_posts_bycatid('3','field:tid,post_title,post_date;order:listorder desc;limit:4');
                 </php>
                 <volist name="posts" id="v">
                     <li class="am-g am-list-item-dated">
@@ -146,7 +146,7 @@
             <a href="{:leuu('Portal/List/index',array('id'=>26))}" class="">more »</a>
         </nav>
     </div>
-    <ul data-am-widget="gallery" class="am-gallery am-avg-lg-4 am-avg-md-3 am-avg-sm-2 am-gallery-bordered" data-am-gallery="{ pureview: true }">
+    <ul data-am-widget="gallery" class="am-gallery am-avg-lg-4 am-avg-md-3 am-avg-sm-2 am-gallery-bordered" data-am-gallery>
         <php>
             $posts=sp_sql_posts_bycatid('26','field:tid,post_title,smeta;order:listorder desc;limit:8');
         </php>

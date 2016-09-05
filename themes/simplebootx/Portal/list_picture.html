@@ -32,7 +32,7 @@
                     <div class="am-accordion-content_diy <empty name='left_nav_child_prams'>am-hide</empty>">
                         <dl class="am-margin-bottom-0">
                             <volist name="left_nav_child_prams" id="v">
-                                <dd class="am-padding-vertical-xs_diy"><a href="{:leuu('portal/list/index',array('id'=>$v['term_id']))}" class="am-text-sm">{$v.name}</a></dd>
+                                <dd class="am-padding-vertical-xs_diy"><a href="{:leuu('Portal/List/index',array('id'=>$v['term_id']))}" class="am-text-sm">{$v.name}</a></dd>
                             </volist>
                         </dl>
                     </div>
@@ -49,9 +49,9 @@
                 <li>列表中心</li>
             </ol>
             <div class="am-container am-padding-horizontal-xs">
-                <div class="am-list-news-bd">
+                <div class="am-list-news-bd" style="padding-top: 5px;">
 
-                    <ul data-am-widget="gallery" class="am-avg-lg-4 am-avg-md-3 am-avg-sm-2 am-gallery-bordered" data-am-gallery="{ pureview: true }">
+                    <ul data-am-widget="gallery" class="am-avg-lg-3 am-avg-md-3 am-avg-sm-2 am-gallery-bordered" data-am-gallery>
                         <php>
                             if($parent ==0){
                             $posts_lists = sp_sql_posts_paged_bycatid($cat_id,"field:tid,post_title,smeta;order:listorder ASC,post_date DESC;",8);
@@ -67,7 +67,7 @@
 
                             <li>
                                 <div class="am-gallery-item">
-                                    <a href="{$v.tid}"><img src="{:sp_get_asset_upload_path($photo['url'])}" alt="{$photo['alt']}" class="am-img-responsive"></a>
+                                    <a href="{:leuu('Portal/Article/index',array('id'=>$v['tid']))}"><img src="{:sp_get_asset_upload_path($photo['url'])}" alt="{$photo['alt']}" class="am-img-responsive"></a>
                                     <h3 class="am-gallery-title am-text-center">{$v.post_title}</h3>
                                 </div>
                             </li>

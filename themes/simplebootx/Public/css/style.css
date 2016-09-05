@@ -1,4 +1,176 @@
 @charset "utf-8";
+.nolsy {
+    list-style: none;
+}
+
+.br_lf {
+    border-left: 1px solid #e5e5e5;
+}
+
+.br_rg {
+    border-right: 1px solid #e5e5e5;
+}
+
+.br_bt {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.br_tp {
+    border-top: 1px solid #e5e5e5;
+}
+
+.br_1 {
+    border: 1px solid #cacaca;
+}
+
+.br_lf_1 {
+    border-left: 1px solid #cacaca;
+}
+
+.br_rg_1 {
+    border-right: 1px solid #cacaca;
+}
+
+.br_bt_1 {
+    border-bottom: 1px solid #cacaca;
+}
+
+.br_tp_1 {
+    border-top: 1px solid #cacaca;
+}
+
+.br_lf_b {
+    border-left: 2px solid #0251b4;
+}
+
+.br_rg_b {
+    border-right: 2px solid #0251b4;
+}
+
+.br_bt_b {
+    border-bottom: 2px solid #0251b4;
+}
+
+.br_tp_b {
+    border-top: 2px solid #0251b4;
+}
+
+.br_lf_w {
+    border-left: 2px solid #fff;
+}
+
+.br_rg_w {
+    border-right: 2px solid #fff;
+}
+
+.br_bt_w {
+    border-bottom: 2px solid #fff;
+}
+
+.br_tp_w {
+    border-top: 2px solid #fff;
+}
+
+.br_del {
+    text-decoration: line-through;
+}
+
+.no_br {
+    border: 0;
+}
+
+.no_bold {
+    font-weight: normal;
+}
+
+.no_fl {
+    float: none;
+}
+
+.bg_orange {
+    background: #ffa200;
+}
+
+.bg_green {
+    background: #00b065;
+}
+
+.bg_grey {
+    background: #f2f1f2;
+}
+
+.bg_grey_1 {
+    background: #323232;
+}
+
+.bg_blue {
+    background: rgba(2, 81, 180, 0.5);
+    filter: alpha(opacity=50);
+}
+
+.bg_blue_1 {
+    background: #0e90d2;
+}
+
+.bg_blue_2 {
+    background: #0087f2;
+}
+
+.bg_blue_3 {
+    background: #0251b4;
+}
+
+.bg_black {
+    background: #333;
+}
+
+.font_black {
+    color: #333;
+}
+
+.font_orange {
+    color: #ffa200;
+}
+
+.font_green {
+    color: #00b065;
+}
+
+.font_grey {
+    color: #959595;
+}
+
+.font_grey_1 {
+    color: #82868a;
+}
+
+.font_white {
+    color: #fff;
+}
+
+.font_red {
+    color: #fe2a00;
+}
+
+.font_blue {
+    color: #0251b4;
+}
+
+.font_blue_1 {
+    color: #014e97;
+}
+
+.font_bold {
+    font-weight: bold;
+}
+
+.font_normal {
+    font-weight: normal;
+}
+
+.list_a a:hover {
+    color: #fe2a00;
+}
 
 .am-accordion-content_diy {
     margin-top: 0;
@@ -108,6 +280,7 @@
 /* 图片画廊 */
 .am-gallery-bordered .am-gallery-title {
     font-size: 1.7rem;
+    margin: 5px 0 0 0;
 }
 
 .am-gallery-item {
