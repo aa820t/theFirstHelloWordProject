@@ -9,6 +9,7 @@ use Common\Controller\AdminbaseController;
 
 class OrderController extends AdminbaseController {
 
+    /* 首页 */
     public function index() {
         $deal_status = I('deal_status', '0');
         $formget = array();
@@ -85,4 +86,30 @@ class OrderController extends AdminbaseController {
 
     }
 
+
+    /**
+     * ajax 获取当前等待处理的在线订单的数量
+     */
+    public function getWaitDealOnlineOrderNum() {
+        $count = M('order')
+            ->where(array(
+                'deal_status' => '0'
+            ))
+            ->count();
+        $this->ajaxReturn(intval($count));
+    }
+
+    /**
+     * ajax 获取当前等待处理的在线订单的列表
+     */
+    public function getWaitDealOnlineOrderList() {
+        $list= M('order')
+            ->where(array(
+                'deal_status' => '0'
+            ))
+            ->order('create_time DESC')
+            ->select();
+        echo json_encode($list);
+        exit;
+    }
 }
