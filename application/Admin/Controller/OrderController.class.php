@@ -87,16 +87,65 @@ class OrderController extends AdminbaseController {
     }
 
 
+    private function SS($name, $value = '', $expire = 0) {
+        $filename = C('DATA_CACHE_PATH') . md5($name) . '.php';
+
+        if ($value === '') {
+            //---- 获取缓存 ----
+            if (!is_file($filename)) {
+                return false;
+            }
+            $content = file_get_contents($filename);
+            if (false !== $content) {
+                $expire = (int)substr($content, 8, 12);
+                if ($expire != 0 && time() > filemtime($filename) + $expire) {
+                    //缓存过期删除缓存文件
+                    unlink($filename);
+                    return false;
+                }
+                //---- 分割字符串 ----
+                $content = substr($content, 20, -3);
+
+                //---- 序列化数据 ----
+                $content = unserialize($content);
+                return $content;
+            } else {
+                return false;
+            }
+        } else {
+            //---- 缓存数据 ----
+            $data = serialize($value);
+            $data = "<?php\n//" . sprintf('%012d', $expire) . $data . "\n?>";
+            $result = file_put_contents($filename, $data);
+            if ($result) {
+                clearstatcache();
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
     /**
      * ajax 获取当前等待处理的在线订单的数量
      */
     public function getWaitDealOnlineOrderNum() {
-        $count = M('order')
-            ->where(array(
-                'deal_status' => '0'
-            ))
-            ->count();
-        $this->ajaxReturn(intval($count));
+        /* 预读缓存的在线订单的数量 */
+        $count = S('needDealOnlineOrderNum');
+
+        if ($count === false) {
+            $count = M('order')
+                ->where(array(
+                    'deal_status' => '0'
+                ))
+                ->count();
+            $count = intval($count);
+
+            /* 缓存数据 */
+            S('needDealOnlineOrderNum',$count);
+        }
+        
+        $this->ajaxReturn($count);
     }
 
     /**

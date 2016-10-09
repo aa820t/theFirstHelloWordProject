@@ -21,7 +21,7 @@
         <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default am-margin-horizontal-0 am-no-layout">
             <h2 class="am-titlebar-title ">公司简介</h2>
             <nav class="am-titlebar-nav">
-                <a href="{:leuu('Portal/Page/index',array('id'=>11))}" class="">more »</a>
+                <a href="{:leuu('page/index',array('id'=>11))}" class="">more »</a>
             </nav>
         </div>
         <div class="am-list-news-bd">
@@ -35,13 +35,13 @@
         </div>
         <ul class="am-avg-lg-2 am-avg-md-2 am-avg-sm-2 am-margin-top-xs">
             <li class="am-padding-horizontal-xs">
-                <a class="am-btn am-btn-primary am-btn-block" href="{:leuu('Portal/Page/index',array('id'=>14))}">
+                <a class="am-btn am-btn-primary am-btn-block" href="{:leuu('page/index',array('id'=>14))}">
                     <div><i class="am-icon-desktop am-icon-lg" style="margin-bottom:3px;"></i></div>
                     在线下单
                 </a>
             </li>
             <li class="am-padding-horizontal-xs">
-                <a class="am-btn am-btn-primary am-btn-block" href="{:leuu('Portal/List/index',array('id'=>14))}">
+                <a class="am-btn am-btn-primary am-btn-block" href="{:leuu('list/index',array('id'=>14))}">
                     <div><i class="am-icon-clipboard am-icon-lg" style="margin-bottom:3px;"></i></div>
                     业务范围
                 </a>
@@ -49,12 +49,12 @@
         </ul>
         <ul class="am-avg-lg-2 am-avg-md-2 am-avg-sm-2 am-margin-top-xs">
             <li class="am-padding-horizontal-xs">
-                <a class="am-btn am-btn-primary am-btn-block" href="{:leuu('Portal/List/index',array('id'=>26))}">
+                <a class="am-btn am-btn-primary am-btn-block" href="{:leuu('list/index',array('id'=>26))}">
                     <div><i class="am-icon-download am-icon-lg" style="margin-bottom:3px;"></i></div>
                     资质证书</a>
             </li>
             <li class="am-padding-horizontal-xs">
-                <a class="am-btn am-btn-primary am-btn-block" href="{:leuu('Portal/Page/index',array('id'=>7))}">
+                <a class="am-btn am-btn-primary am-btn-block" href="{:leuu('page/index',array('id'=>7))}">
                     <div><i class="am-icon-users am-icon-lg" style="margin-bottom:3px;"></i></div>
                     联系我们</a>
             </li>
@@ -68,7 +68,7 @@
         <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default am-margin-horizontal-0 am-no-layout">
             <h2 class="am-titlebar-title ">新闻资讯</h2>
             <nav class="am-titlebar-nav">
-                <a href="{:leuu('Portal/List/index',array('id'=>3))}" class="">more »</a>
+                <a href="{:leuu('list/index',array('id'=>3))}" class="">more »</a>
             </nav>
         </div>
         <div class="am-list-news-bd">
@@ -78,7 +78,7 @@
                 </php>
                 <volist name="posts" id="v">
                     <li class="am-g am-list-item-dated">
-                        <a href="{:leuu('Portal/Article/index',array('id'=>$v['tid']))}" title="{$v.post_title}" class="am-list-item-hd ">{$v.post_title}</a>
+                        <a href="{:leuu('article/index',array('id'=>$v['tid']))}" title="{$v.post_title}" class="am-list-item-hd ">{$v.post_title}</a>
                         <span class="am-list-date">{$v.post_date|substr=2,8}</span>
                     </li>
                 </volist>
@@ -100,7 +100,7 @@
                 </php>
                 <volist name="posts" id="v">
                     <li class="am-g am-list-item-dated">
-                        <a href="{:leuu('Portal/Article/index',array('id'=>$v['tid']))}" title="{$v.post_title}" class="am-list-item-hd ">{$v.post_title}</a>
+                        <a href="{:leuu('article/index',array('id'=>$v['tid']))}" title="{$v.post_title}" class="am-list-item-hd ">{$v.post_title}</a>
                         <span class="am-list-date">{$v.post_date|substr=2,8}</span>
                     </li>
                 </volist>
@@ -113,7 +113,7 @@
         <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default am-margin-horizontal-0 am-no-layout">
             <h2 class="am-titlebar-title ">案例中心</h2>
             <nav class="am-titlebar-nav">
-                <a href="{:leuu('Portal/List/index',array('id'=>11))}" class="">more »</a>
+                <a href="{:leuu('list/index',array('id'=>11))}" class="">more »</a>
             </nav>
         </div>
 
@@ -128,7 +128,7 @@
                         $photo = $photo['photo'][0];
                     </php>
                     <li>
-                        <a href="{:leuu('Portal/Article/index',array('id'=>$v['tid']))}">
+                        <a href="{:leuu('article/index',array('id'=>$v['tid']))}">
                             <img src="{:sp_get_asset_upload_path($photo['url'])}" alt="{$photo['alt']}" draggable="false" class="am-img-responsive">
                             <div class="am-slider-desc">{$v.post_title}</div>
                         </a>
@@ -143,7 +143,7 @@
     <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default am-margin-horizontal-0 am-no-layout">
         <h2 class="am-titlebar-title ">资质证书</h2>
         <nav class="am-titlebar-nav">
-            <a href="{:leuu('Portal/List/index',array('id'=>26))}" class="">more »</a>
+            <a href="{:leuu('list/index',array('id'=>26))}" class="">more »</a>
         </nav>
     </div>
     <ul data-am-widget="gallery" class="am-gallery am-avg-lg-4 am-avg-md-3 am-avg-sm-2 am-gallery-bordered" data-am-gallery>
@@ -157,7 +157,7 @@
             </php>
             <li>
                 <div class="am-gallery-item">
-                    <a href="{:leuu('Portal/Article/index',array('id'=>$v['tid']))}">
+                    <a href="{:leuu('article/index',array('id'=>$v['tid']))}">
                         <img src="{:sp_get_asset_upload_path($photo['url'])}" alt="{$photo['alt']}" class="am-img-responsive">
                         <h3 class="am-gallery-title am-text-center">{$v.post_title}</h3>
                     </a>
@@ -171,7 +171,7 @@
     <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default am-margin-horizontal-0 am-no-layout">
         <h2 class="am-titlebar-title ">施工播报</h2>
         <nav class="am-titlebar-nav">
-            <a href="{:leuu('Portal/List/index',array('id'=>6))}" class="">more »</a>
+            <a href="{:leuu('list/index',array('id'=>6))}" class="">more »</a>
         </nav>
     </div>
     <ul class="am-list" style="margin:0 10px 0 0">
@@ -180,7 +180,7 @@
         </php>
         <volist name="posts" id="v">
             <li class="am-u-lg-6 am-u-md-12 am-u-sm-12 am-u-end am-list-item-dated">
-                <a href="{:leuu('Portal/Article/index',array('id'=>$v['tid']))}" title="{$v.post_title}" class="am-list-item-hd">{$v.post_title}</a>
+                <a href="{:leuu('article/index',array('id'=>$v['tid']))}" title="{$v.post_title}" class="am-list-item-hd">{$v.post_title}</a>
                 <span class="am-list-date">{$v.post_date|substr=2,8}</span>
             </li>
         </volist>
